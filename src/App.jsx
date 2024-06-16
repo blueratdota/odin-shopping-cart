@@ -36,7 +36,7 @@ function App() {
         onClose={onClose}
         finalFocusRef={btnRef}
       >
-        <DrawerOverlay className="bg-black" />
+        <DrawerOverlay className="" />
         <DrawerContent className="bg-orange-400 max-w-xs">
           <DrawerCloseButton />
           <DrawerHeader>Create your account</DrawerHeader>
