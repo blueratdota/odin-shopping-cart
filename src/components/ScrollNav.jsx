@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+//image imports
 import fanatecFullLogo from "../assets/images/svg/fanatec-logo_white.svg";
 import fanatecShortLogo from "../assets/images/svg/fanatec-f_white.svg";
 
@@ -17,7 +19,7 @@ const ScrollNav = () => {
   const [sticky, setStiky] = useState(false);
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
   const changeBackground = () => {
-    console.log(window.scrollY);
+    // console.log(window.scrollY);
     window.scrollY > 64 ? setStiky(true) : setStiky(false);
   };
 
@@ -25,15 +27,15 @@ const ScrollNav = () => {
 
   return (
     <nav
-      className={`${
+      className={`bg-gray-800 ${
         sticky
           ? "w-full fixed transition-all translate-y-full ease-in duration-300 bottom-full"
-          : "transition-all translate-y-0 ease-in duration-300"
+          : "transition-all translate-y-0 ease-in-out duration-100"
       }`}
     >
       {sticky ? (
         isTabletOrMobile ? (
-          <div className="bg-gray-800 pl-4 h-[51px] flex items-center border-y border-gray-300 border-opacity-20 ">
+          <div className="pl-4 h-[51px] flex items-center border-y border-gray-300 border-opacity-20 ">
             <div className="basis-[40%]">
               <img
                 className="w-[32px]  "
@@ -50,10 +52,31 @@ const ScrollNav = () => {
             </div>
           </div>
         ) : (
-          <div className="bg-white">big</div>
+          <div className="pl-4 h-[51px] flex items-center border-y border-gray-300 border-opacity-20 [&>*]:text-white">
+            <div className="basis-[10%]">
+              <img
+                className="w-[32px]  "
+                src={fanatecShortLogo}
+                alt="fanatec long logo"
+              />
+            </div>
+            <div className="flex basis-full gap-5 my-auto justify-center [&>*]:shrink-0 overflow-clip">
+              <Link to={"ready-2-race"}>READY2RACE</Link>
+              <Link to={"wheel-bases"}>RACING WHEELS/ DIRECT DRIVE BASES</Link>
+              <Link to={"steering-wheels"}>STEERING WHEELS</Link>
+              <Link to={"pedals"}>PEDALS</Link>
+              <Link to={"pedals"}>SHIFTER/ PEDALS</Link>
+            </div>
+            <div className="flex grow-0 items-center [&>div>svg]:scale-[0.4] [&>div]:w-[52px] [&>div]:grow-0 justify-end">
+              <SmallIconBtn icon={mdiHeartOutline}></SmallIconBtn>
+              <SmallIconBtn icon={mdiAccount}></SmallIconBtn>
+              <SmallIconBtn icon={mdiCartOutline}></SmallIconBtn>
+              <SmallIconBtn icon={mdiMagnify}></SmallIconBtn>
+            </div>
+          </div>
         )
       ) : isTabletOrMobile ? (
-        <div className="bg-gray-800">
+        <div className="">
           <div className="[&>*]:h-6 [&>*]:text-white flex justify-end gap-6 px-6 py-2">
             <Icon path={mdiHeartOutline} />
             <Icon path={mdiAccount} />
@@ -78,9 +101,43 @@ const ScrollNav = () => {
           </div>
         </div>
       ) : (
-        <div className="bg-white">big</div>
+        <div className="">
+          <div className="[&>div>*]:h-6 [&>div>*]:text-white flex justify-end gap-6 px-6 py-2">
+            <div className="flex gap-2 items-center">
+              <Icon path={mdiHeartOutline} />
+              <p>Wishlists</p>
+            </div>
+            <div className="flex gap-2 items-center">
+              <Icon path={mdiAccount} />
+              <p>My Account</p>
+            </div>
+            <div className="flex gap-2 items-center">
+              <Icon path={mdiCartOutline} />
+              <p>Cart</p>
+            </div>
+          </div>
+          <div className="border-y border-gray-300 border-opacity-20 flex h-[64px] [&>div]:grow [&>*]:text-white">
+            <div className="basis-[20%] max-w-[250px] my-auto pl-4 ">
+              <img
+                className="w-[180px] "
+                src={fanatecFullLogo}
+                alt="fanatec long logo"
+              />
+            </div>
+            <div className="flex gap-5 my-auto justify-center [&>*]:shrink-0 overflow-clip">
+              <Link to={"ready-2-race"}>READY2RACE</Link>
+              <Link to={"wheel-bases"}>RACING WHEELS/ DIRECT DRIVE BASES</Link>
+              <Link to={"steering-wheels"}>STEERING WHEELS</Link>
+              <Link to={"pedals"}>PEDALS</Link>
+              <Link to={"pedals"}>SHIFTER/ PEDALS</Link>
+            </div>
+            <div className="border-l border-gray-300 border-opacity-20 flex max-w-[350px] ">
+              <input type="text" className="bg-transparent grow pl-4" />
+              <Icon className="p-4" path={mdiMagnify} />
+            </div>
+          </div>
+        </div>
       )}
-      {isTabletOrMobile ? <div>small</div> : <div>big</div>}
     </nav>
   );
 };

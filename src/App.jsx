@@ -20,12 +20,7 @@ function App() {
   const btnRef = useRef();
 
   return (
-    <div
-      className="bg-gray-700"
-      onScroll={() => {
-        console.log("reee");
-      }}
-    >
+    <div className="bg-gray-700">
       <ScrollNav></ScrollNav>
       <button className="bg-white" ref={btnRef} onClick={onOpen}>
         drawer
