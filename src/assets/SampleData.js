@@ -1069,4 +1069,15 @@ const productData = [
   }
 ];
 
-export { productData };
+const bannerPhotos = [
+  "https://fanatec.com/media/image/d3/27/4d/CSL_EP_V2_banner_1920x1920.png",
+  "https://fanatec.com/media/image/2c/65/0d/GTWS_banner_1920x1920.png",
+  "https://fanatec.com/media/image/fb/f5/15/apparel_en_banner__1920x1920.jpg",
+  "https://fanatec.com/media/image/32/7c/9d/CS_DD_banner_en__1920x1920.png",
+  "https://fanatec.com/media/image/22/2f/f9/GT_DD_X_banner_EN_1920x1920.jpg",
+  "https://fanatec.com/media/image/30/f0/ea/CS_DD_F1_Esports_V2_banner_EN_1920x1920.jpg",
+  "https://fanatec.com/media/image/bb/6d/44/CS_DDp_banner_EN_j_1920x1920.jpg",
+  "https://fanatec.com/media/image/1b/3c/45/CSL_Cockpit_banner_1920x1920.jpg"
+];
+
+export { productData, bannerPhotos };
