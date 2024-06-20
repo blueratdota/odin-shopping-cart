@@ -42,7 +42,7 @@ const ScrollNav = () => {
 
   return (
     <nav
-      className={`bg-gray-800 ${
+      className={`bg-gray-800 z-10 font-bold  ${
         sticky
           ? "w-full fixed transition-all translate-y-full ease-in duration-300 bottom-full"
           : "transition-all translate-y-0 ease-in-out duration-100"
@@ -127,16 +127,19 @@ const ScrollNav = () => {
       ) : (
         // ===============BIG SIZE FOR SCROLLED DOWN
         <div className="">
-          <div className="[&>div>*]:h-6 [&>div>*]:text-white flex justify-end gap-6 px-6 py-2">
-            <div className="flex gap-2 items-center">
+          <div className="[&>div>*]:h-6 [&>div>*]:text-white [&>div>p]:font-thin flex justify-end gap-6 px-6 py-2">
+            <div className="flex gap-2 items-center bg-icon">
               <Icon path={mdiHeartOutline} />
               <p>Wishlists</p>
             </div>
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2 items-center bg-icon">
               <Icon path={mdiAccount} />
               <p>My Account</p>
             </div>
-            <div className="flex gap-2 items-center" onClick={onOpenCart}>
+            <div
+              className="flex gap-2 items-center bg-icon"
+              onClick={onOpenCart}
+            >
               <Icon path={mdiCartOutline} />
               <p>Cart</p>
             </div>
@@ -153,11 +156,21 @@ const ScrollNav = () => {
               />
             </Link>
             <div className="flex gap-5 my-auto justify-center [&>*]:shrink-0 overflow-clip">
-              <Link to={"ready-2-race"}>READY2RACE</Link>
-              <Link to={"wheel-bases"}>RACING WHEELS/ DIRECT DRIVE BASES</Link>
-              <Link to={"steering-wheels"}>STEERING WHEELS</Link>
-              <Link to={"pedals"}>PEDALS</Link>
-              <Link to={"pedals"}>SHIFTER/ PEDALS</Link>
+              <Link to={"ready-2-race"} className="bg-link">
+                READY2RACE
+              </Link>
+              <Link to={"wheel-bases"} className="bg-link">
+                RACING WHEELS/ DIRECT DRIVE BASES
+              </Link>
+              <Link to={"steering-wheels"} className="bg-link">
+                STEERING WHEELS
+              </Link>
+              <Link to={"pedals"} className="bg-link">
+                PEDALS
+              </Link>
+              <Link to={"pedals"} className="bg-link">
+                SHIFTER/ PEDALS
+              </Link>
             </div>
             <div className="border-l border-gray-300 border-opacity-20 flex max-w-[350px] ">
               <input type="text" className="bg-transparent grow pl-4" />

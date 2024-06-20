@@ -3,6 +3,92 @@
 @tailwind utilities;
 
 @layer components {
+  .skewed-btn {
+    background: none;
+    width: 250px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    border: 1px rgba(255, 255, 255, 0.438) solid;
+    transform: skewX(-20deg);
+
+    background: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0.438) 50%
+      )
+      right;
+    background-size: 200%;
+    transition: 0.2s ease-out;
+  }
+  .skewed-btn:hover {
+    color: black;
+    background-position: left;
+    cursor: pointer;
+  }
+  .skewed-btn::before {
+    content: "LEARN MORE";
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    font-weight: 700;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%) skew(20deg);
+  }
+  .skewed-btn:hover:before {
+    transform: translate(-50%, -50%) skew(20deg);
+  }
+
+  .skewed-btn-sm {
+    background: none;
+    width: 250px;
+    color: white;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    padding: 20px;
+    border: 1px rgba(255, 255, 255, 0.438) solid;
+    transform: translate(-50%, -50%) skew(-20deg);
+
+    background: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0.438) 50%
+      )
+      right;
+    background-size: 200%;
+    transition: 0.2s ease-out;
+  }
+  .skewed-btn-sm:hover {
+    color: black;
+    background-position: left;
+    cursor: pointer;
+  }
+  .skewed-btn-sm::before {
+    content: "LEARN MORE";
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    font-weight: 700;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%) skew(20deg);
+  }
+  .skewed-btn-sm:hover:before {
+    transform: translate(-50%, -50%) skew(20deg);
+  }
+
+  .bg-link:hover {
+    @apply transition-colors delay-[70ms] hover:text-red-700;
+  }
+  .bg-icon:hover {
+    @apply cursor-pointer;
+  }
 }
 
 * {
