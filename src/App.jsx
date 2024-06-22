@@ -14,7 +14,7 @@ function App() {
         return <div>{data.id}</div>;
       })}
       <Outlet></Outlet>
-      <footer className="bg-red-500">xxx</footer>
+      <footer className="bg-red-500">some yeets</footer>
     </div>
   );
 }
