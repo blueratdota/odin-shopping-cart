@@ -9,16 +9,47 @@ import {
   Button
 } from "@chakra-ui/react";
 
-const MenuDrawer = ({ onClose }) => {
+const MenuDrawer = ({ onClose, sticky }) => {
   return (
     <>
-      <DrawerOverlay className="" />
-      <DrawerContent className="bg-green-400 max-w-xs relative">
-        <DrawerCloseButton />
-        <DrawerHeader>Create your account</DrawerHeader>
+      <DrawerOverlay onClick={onClose} />
+      <DrawerContent
+        className={`${sticky ? "bg-green-400" : "bg-blue-400"} max-w-xs absolute`}
+      >
+        <div className={`${sticky ? "mt-[50px]" : ""} bg-white`}>
+          <DrawerHeader>Create your account</DrawerHeader>
+          <DrawerCloseButton />
+        </div>
 
         <DrawerBody>
-          <Input placeholder="Type here..." />
+          <Input placeholder="Type here..." className="top-1/2" />
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
+          <div>xxx</div>
         </DrawerBody>
 
         <DrawerFooter>
