@@ -43,7 +43,7 @@ const ScrollNav = () => {
   return (
     <>
       <nav
-        className={`bg-gray-800 z-10 font-bold  ${
+        className={`bg-gray-800 z-[1] font-bold  ${
           sticky
             ? "w-full fixed transition-all translate-y-full ease-in duration-300 bottom-full"
             : "transition-all translate-y-0 ease-in-out duration-100"

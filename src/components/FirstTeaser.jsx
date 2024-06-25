@@ -1,7 +1,7 @@
 const FirstTeaser = () => {
   return (
-    <div className="bg-white w-full pt-20 pb-10 text-center md:flex md:gap-20 md:items-center">
-      <div className="md:max-w-[50%] md:text-end md:grow">
+    <div className="bg-white w-full max-h-[645x] text-center md:flex md:items-center md:gap-10 xl:gap-20">
+      <div className="pt-20 pb-10 md:max-w-[45%] md:text-end md:grow ">
         <h2 className="text-3xl font-medium mb-10 teaser-line relative">
           REALISTIC SIMULATION HARDWARE
         </h2>
@@ -23,11 +23,11 @@ const FirstTeaser = () => {
         <div className="mt-5">skewed button</div>
       </div>
 
-      <div className="max-w-[50%] grow hidden md:block">
+      <div className="max-w-[55%] h-[645px] grow hidden md:block w-0">
         <img
           src="https://fanatec.com/media/image/64/81/70/DD2_frontpage3.jpg"
           alt=""
-          className="max-h-[400px]"
+          className="h-full w-full xl:max-w-[595px] object-contain "
         />
       </div>
     </div>
