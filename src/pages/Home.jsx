@@ -1,6 +1,7 @@
 import HomeCarousel from "../components/HomeCarousel";
 import HomeCategories from "../components/HomeCategories";
 import HomeContent from "../components/HomeContent";
+import HomeSeries from "../components/HomeSeries";
 import HomeTopSeller from "../components/HomeTopSeller";
 
 function Home() {
@@ -26,6 +27,7 @@ function Home() {
       ></HomeContent>
       <HomeTopSeller></HomeTopSeller>
       <HomeCategories></HomeCategories>
+      <HomeSeries></HomeSeries>
     </>
   );
 }

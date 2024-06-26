@@ -51,7 +51,7 @@ const HomeTopSeller = () => {
           <div className="pb-10">
             <Swiper
               slidesPerView={3}
-              spaceBetween={0}
+              spaceBetween={50}
               pagination={{
                 clickable: true
               }}
