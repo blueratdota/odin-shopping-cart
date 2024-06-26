@@ -5,6 +5,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "Gran Turismo® DD Extreme",
+    class: "GT",
     category: "Wheel Bases",
     price: 209000,
     availability: "In Stock",
@@ -28,6 +29,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "ClubSport Racing Wheel F1®",
+    class: "ClubSport",
     category: "Wheel Bases",
     price: 209000,
     availability: "In Stock",
@@ -51,6 +53,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "Podium Wheel Base DD2",
+    class: "Podium",
     category: "Wheel Bases",
     price: 190000,
     availability: "In Stock",
@@ -75,6 +78,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "ClubSport DD+",
+    class: "ClubSport",
     category: "Wheel Bases",
     price: 160200,
     availability: "In Stock",
@@ -101,6 +105,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "Gran Turismo DD Pro (8 Nm)",
+    class: "GT",
     category: "Wheel Bases",
     price: 160200,
     availability: "In Stock",
@@ -127,6 +132,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "Gran Turismo DD Pro (5 Nm)",
+    class: "GT",
     category: "Wheel Bases",
     price: 112200,
     availability: "In Stock",
@@ -153,6 +159,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "CSL DD Racing Wheel WRC for Xbox & PC (8 Nm)",
+    class: "CSL",
     category: "Wheel Bases",
     price: 104200,
     availability: "In Stock",
@@ -175,6 +182,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "ClubSport Steering Wheel F1® Esports V2",
+    class: "ClubSport",
     category: "Wheel Bases",
     price: 144000,
     availability: "In Stock",
@@ -197,6 +205,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "CSL DD (8 Nm)",
+    class: "CSL",
     category: "Wheel Bases",
     price: 72100,
     availability: "In Stock",
@@ -222,6 +231,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "CSL DD (5 Nm)",
+    class: "CSL",
     category: "Wheel Bases",
     price: 72100,
     availability: "In Stock",
@@ -248,6 +258,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "ClubSport Pedals V3 inverted",
+    class: "ClubSport",
     category: "Pedals",
     price: 96200,
     availability: "In Stock",
@@ -277,6 +288,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "ClubSport Pedals V3",
+    class: "ClubSport",
     category: "Pedals",
     price: 64100,
     availability: "Pre-Order",
@@ -304,6 +316,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "CSL Elite Pedals V2",
+    class: "CSL",
     category: "Pedals",
     price: 48100,
     availability: "Pre-Order",
@@ -328,6 +341,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "CSL Pedals LC",
+    class: "CSL",
     category: "Pedals",
     price: 32100,
     availability: "In Stock",
@@ -351,6 +365,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "CSL Steering Wheel P1 V2",
+    class: "CSL",
     category: "Steering Wheels",
     price: 19300,
     availability: "In Stock",
@@ -374,6 +389,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "Podium Steering Wheel BMW M4 GT3",
+    class: "Podium",
     category: "Steering Wheels",
     price: 240300,
     availability: "In Stock",
@@ -397,6 +413,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "Podium Steering Wheel Monte Carlo Rally",
+    class: "Podium",
     category: "Steering Wheels",
     price: 112200,
     availability: "Pre-Order",
@@ -420,6 +437,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "Podium Steering Wheel Fanatec GT World Challenge",
+    class: "Podium",
     category: "Steering Wheels",
     price: 97700,
     availability: "Pre-Order",
@@ -443,6 +461,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "ClubSport Steering Wheel Formula V2.5 X",
+    class: "ClubSport",
     category: "Steering Wheels",
     price: 64100,
     availability: "In Stock",
@@ -465,6 +484,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "ClubSport Steering Wheel Formula V2.5",
+    class: "ClubSport",
     category: "Steering Wheels",
     price: 62500,
     availability: "In Stock",
@@ -487,6 +507,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "ClubSport Steering Wheel BMW GT2 V2",
+    class: "ClubSport",
     category: "Steering Wheels",
     price: 48100,
     availability: "In Stock",
@@ -508,6 +529,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "ClubSport Steering Wheel F1® Esports V2",
+    class: "ClubSport",
     category: "Steering Wheels",
     price: 35300,
     availability: "In Stock",
@@ -529,6 +551,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "CSL Elite Steering Wheel McLaren GT3 V2",
+    class: "CSL",
     category: "Steering Wheels",
     price: 32100,
     availability: "In Stock",
@@ -551,6 +574,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "Podium Steering Wheel Classic 2",
+    class: "Podium",
     category: "Steering Wheels",
     price: 37900,
     availability: "Pre-Order",
@@ -573,6 +597,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "CSL Steering Wheel GT Alcantara V2",
+    class: "CSL",
     category: "Steering Wheels",
     price: 25800,
     availability: "In Stock",
@@ -594,6 +619,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "Podium Steering Wheel R300",
+    class: "Podium",
     category: "Steering Wheels",
     price: 80100,
     availability: "In Stock",
@@ -616,6 +642,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "ClubSport Steering Wheel GT V2",
+    class: "ClubSport",
     category: "Steering Wheels",
     price: 60900,
     availability: "In Stock",
@@ -638,6 +665,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "Podium Steering Wheel NASCAR",
+    class: "Podium",
     category: "Steering Wheels",
     price: 50600,
     availability: "In Stock",
@@ -661,6 +689,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "ClubSport Steering Wheel RS",
+    class: "ClubSport",
     category: "Steering Wheels",
     price: 48100,
     availability: "Pre-Order",
@@ -682,6 +711,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "ClubSport Steering Wheel Round 1 V2",
+    class: "ClubSport",
     category: "Steering Wheels",
     price: 48100,
     availability: "Pre-Order",
@@ -704,6 +734,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "ClubSport Handbrake V1.5",
+    class: "ClubSport",
     category: "Shifters/Others",
     price: 21000,
     availability: "In Stock",
@@ -729,6 +760,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "ClubSport Shifter SQ V1.5",
+    class: "ClubSport",
     category: "Shifters/Others",
     price: 41700,
     availability: "In Stock",
@@ -755,6 +787,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "Podium Button Module Rally",
+    class: "Podium",
     category: "Shifters/Others",
     price: 40100,
     availability: "In Stock",
@@ -777,6 +810,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "Podium Button Module Endurance",
+    class: "Podium",
     category: "Shifters/Others",
     price: 32100,
     availability: "In Stock",
@@ -794,6 +828,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "Podium Advanced Paddle Module",
+    class: "Podium",
     category: "Shifters/Others",
     price: 29000,
     availability: "In Stock",
@@ -814,6 +849,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "ClubSport Pedals V3 Damper Kit",
+    class: "ClubSport",
     category: "Accessories",
     price: 12900,
     availability: "In Stock",
@@ -835,6 +871,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "CSL Pedals Tuning Kit",
+    class: "CSL",
     category: "Accessories",
     price: 5600,
     availability: "In Stock",
@@ -855,6 +892,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "ClubSport Pedals V3 Brake Performance Kit",
+    class: "ClubSport",
     category: "Accessories",
     price: 3200,
     availability: "In Stock",
@@ -878,6 +916,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "Podium Mounting Brackets",
+    class: "Podium",
     category: "Accessories",
     price: 40100,
     availability: "In Stock",
@@ -901,6 +940,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "Podium Kill Switch",
+    class: "Podium",
     category: "Accessories",
     price: 16100,
     availability: "In Stock",
@@ -923,6 +963,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "QR1 Wheel-Side",
+    class: "QR",
     category: "Accessories",
     price: 8100,
     availability: "In Stock",
@@ -945,6 +986,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "QR2 Wheel-Side",
+    class: "QR",
     category: "Accessories",
     price: 15800,
     availability: "In Stock",
@@ -966,6 +1008,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "QR2 Pro Wheel-Side",
+    class: "QR",
     category: "Accessories",
     price: 31600,
     availability: "In Stock",
@@ -987,6 +1030,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "Podium Hub",
+    class: "Podium",
     category: "Accessories",
     price: 32100,
     availability: "In Stock",
@@ -1011,6 +1055,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "ClubSport Shifter Carbon Knobs Kit",
+    class: "ClubSport",
     category: "Accessories",
     price: 12900,
     availability: "In Stock",
@@ -1031,6 +1076,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "ClubSport Shifter Table Clamp",
+    class: "ClubSport",
     category: "Accessories",
     price: 6500,
     availability: "In Stock",
@@ -1051,6 +1097,7 @@ const productData = [
   {
     id: uuidv4(),
     name: "ClubSport USB Adapter",
+    class: "ClubSport",
     category: "Accessories",
     price: 3200,
     availability: "In Stock",
@@ -1091,4 +1138,13 @@ const smBannerPhotos = [
   "https://fanatec.com/media/image/3e/34/9c/CSL_Cockpit_banner_mob_1920x1920.jpg"
 ];
 
-export { productData, bannerPhotos, smBannerPhotos };
+const topSellers = [
+  productData[0],
+  productData[1],
+  productData[2],
+  productData[3],
+  productData[4],
+  productData[5]
+];
+
+export { productData, bannerPhotos, smBannerPhotos, topSellers };
