@@ -1,4 +1,5 @@
 import HomeCarousel from "../components/HomeCarousel";
+import HomeCategories from "../components/HomeCategories";
 import HomeContent from "../components/HomeContent";
 import HomeTopSeller from "../components/HomeTopSeller";
 
@@ -24,6 +25,7 @@ function Home() {
         description={`Choose from our carefully selected bundle offers, from starter kits to premium setups.`}
       ></HomeContent>
       <HomeTopSeller></HomeTopSeller>
+      <HomeCategories></HomeCategories>
     </>
   );
 }

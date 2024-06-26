@@ -95,6 +95,15 @@
     width: 100%;
     transform: translate(-50%, -50%) skew(-60deg);
   }
+  .category-bg {
+    background: linear-gradient(
+      to bottom,
+      #9f1239 0%,
+      #9f1239 70%,
+      white 50%,
+      white 100%
+    );
+  }
   @media (min-width: 720px) {
     .teaser-line::after {
       display: flex;
