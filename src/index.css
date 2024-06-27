@@ -118,6 +118,13 @@
   .glance-label {
     @apply absolute uppercase right-0 pt-3 pr-5 font-medium text-lg z-10;
   }
+  .circle-icon {
+    @apply w-10 h-10 border rounded-[50%] border-gray-400 border-opacity-25 flex content-center items-center p-2;
+  }
+  .svg-filter {
+    filter: invert(78%) sepia(11%) saturate(308%) hue-rotate(179deg)
+      brightness(83%) contrast(85%);
+  }
 
   .bg-link:hover {
     @apply transition-colors delay-[70ms] hover:text-red-700;
