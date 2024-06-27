@@ -95,6 +95,14 @@
     width: 100%;
     transform: translate(-50%, -50%) skew(-60deg);
   }
+  @media (min-width: 720px) {
+    .teaser-line::after {
+      display: flex;
+      max-width: 200px;
+      transform: translate(-100%, -50%);
+      left: 100%;
+    }
+  }
   .category-bg {
     background: linear-gradient(
       to bottom,
@@ -104,13 +112,11 @@
       white 100%
     );
   }
-  @media (min-width: 720px) {
-    .teaser-line::after {
-      display: flex;
-      max-width: 200px;
-      transform: translate(-100%, -50%);
-      left: 100%;
-    }
+  .glance-container {
+    @apply overflow-hidden relative hover:text-red-700 hover:cursor-pointer;
+  }
+  .glance-label {
+    @apply absolute uppercase right-0 pt-3 pr-5 font-medium text-lg z-10;
   }
 
   .bg-link:hover {

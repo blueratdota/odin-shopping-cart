@@ -4,19 +4,16 @@ import { productData } from "./assets/SampleData";
 //import - components
 import ScrollNav from "./components/ScrollNav";
 import HomeCarousel from "./components/HomeCarousel";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="bg-gray-700">
+    <div className="bg-gray-800">
       <ScrollNav></ScrollNav>
 
       <Outlet></Outlet>
 
-      {productData.map((data) => {
-        return <div>{data.id}</div>;
-      })}
-
-      <footer className="bg-red-500">some yeets</footer>
+      <Footer></Footer>
     </div>
   );
 }

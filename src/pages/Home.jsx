@@ -17,7 +17,7 @@ function Home() {
         description={`Enthusiast-grade equipment, built by sim racers, for sim racers.Designed and engineered in Germany, Fanatec racing simulation hardware is built to the highest standards so that you can perform at your best. It’s time to stop playing with toys.`}
       ></HomeContent>
       <HomeContent
-        bgColor={"gray-700"}
+        bgColor={"gray-800"}
         txtColor={"white"}
         headerTitle={"PRODUCT BUNDLES"}
         imgLink={
