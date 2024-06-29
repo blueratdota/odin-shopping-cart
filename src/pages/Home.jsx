@@ -15,6 +15,7 @@ function Home() {
         headerTitle={"REALISTIC SIMULATION HARDWARE"}
         imgLink={"https://fanatec.com/media/image/64/81/70/DD2_frontpage3.jpg"}
         description={`Enthusiast-grade equipment, built by sim racers, for sim racers.Designed and engineered in Germany, Fanatec racing simulation hardware is built to the highest standards so that you can perform at your best. It’s time to stop playing with toys.`}
+        btnText={"More"}
       ></HomeContent>
       <HomeContent
         bgColor={"gray-800"}
@@ -24,6 +25,7 @@ function Home() {
           "https://fanatec.com/media/image/b7/49/e5/GT_DD_PRO_Prem-1280x1280.png"
         }
         description={`Choose from our carefully selected bundle offers, from starter kits to premium setups.`}
+        btnText={"Show All Bundles"}
       ></HomeContent>
       <HomeTopSeller></HomeTopSeller>
       <HomeCategories></HomeCategories>

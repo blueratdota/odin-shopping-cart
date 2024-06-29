@@ -83,6 +83,34 @@
     transform: translate(-50%, -50%) skew(20deg);
   }
 
+  .btn-bg {
+    background: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0.438) 50%
+      )
+      right;
+    background-size: 200%;
+    transition: 0.2s ease-out;
+    border-color: gray;
+  }
+  .btn-bg-blk {
+    background: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(0, 0, 0, 0.438) 50%
+      )
+      right;
+    background-size: 200%;
+    transition: 0.2s ease-out;
+  }
+  .btn-bg:hover,
+  .btn-bg-blk:hover {
+    color: black;
+    background-position: left;
+    cursor: pointer;
+  }
+
   .teaser-line::after {
     content: " ";
     background-color: red;
@@ -103,6 +131,7 @@
       left: 100%;
     }
   }
+
   .category-bg {
     background: linear-gradient(
       to bottom,
@@ -121,9 +150,15 @@
   .circle-icon {
     @apply w-10 h-10 border rounded-[50%] border-gray-400 border-opacity-25 flex content-center items-center p-2;
   }
+  .series-img {
+    @apply h-full w-full object-contain md:object-cover duration-75 ease-linear hover:scale-110;
+  }
   .svg-filter {
     filter: invert(78%) sepia(11%) saturate(308%) hue-rotate(179deg)
       brightness(83%) contrast(85%);
+  }
+  .payment-grayscale {
+    @apply w-full h-full object-contain grayscale-[90%] hover:grayscale-0 duration-500;
   }
 
   .bg-link:hover {

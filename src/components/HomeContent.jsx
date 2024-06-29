@@ -1,15 +1,18 @@
+import SkewedButton from "./SkewedButton";
+
 const HomeContent = ({
   bgColor,
   txtColor,
   headerTitle,
   imgLink,
-  description
+  description,
+  btnText
 }) => {
   return (
     <div
       className={`bg-${bgColor} text-${txtColor} w-full max-h-[645x] text-center md:flex md:items-center sm:gap-10 md:gap-10 xl:gap-20`}
     >
-      <div className="pt-20 pb-10 md:max-w-[45%] md:text-end md:grow ">
+      <div className="pt-20 pb-10 md:max-w-[45%] md:text-end md:grow relative ">
         <h2 className="text-3xl font-medium mb-10 teaser-line relative">
           {headerTitle}
         </h2>
@@ -19,7 +22,7 @@ const HomeContent = ({
         <div className="flex justify-center md:justify-end mt-5 px-4 md:px-0 md:pl-5">
           <p className="max-w-[420px] font-thin text-lg">{description}</p>
         </div>
-        <div className="mt-5">skewed button</div>
+        <SkewedButton text={btnText} bgColor={bgColor}></SkewedButton>
       </div>
 
       <div className="max-w-[55%] h-[645px] grow hidden md:block w-0">
