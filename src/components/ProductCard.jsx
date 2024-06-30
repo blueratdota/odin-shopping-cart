@@ -19,7 +19,7 @@ const ProductCard = ({ data }) => {
     "No Stock": { circle: "bg-red-400", text: "text-red-400" }
   };
   return (
-    <div className="md:max-h-[520px] md:max-w-[340px] relative mx-5 pb-6 border shadow-sm overflow-hidden [&>*]:font-medium">
+    <div className=" relative mx-5 pb-6 border shadow-sm overflow-hidden [&>*]:font-medium flex flex-col justify-between">
       <div
         className={`${classColors[productClass]} w-fit py-2 px-4 text-white absolute `}
       >
@@ -33,9 +33,10 @@ const ProductCard = ({ data }) => {
       <img
         src={data.thumbnail}
         alt=""
-        className="w-[75%] h-[75%] object-cover object-top mx-auto mt-10"
+        className="w-[75%] max-h-[75%] object-cover object-bottom mx-auto pt-10 pb-5"
       />
-      <div className="flex flex-col gap-3">
+
+      <div className="">
         <div className="text-center flex flex-col gap-2">
           <p className="text-xl font-semibold">{productName}</p>
           <p className="text-emerald-500 text-lg  ">¥ {productPrice}</p>
@@ -51,7 +52,7 @@ const ProductCard = ({ data }) => {
           </div>
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center pt-5">
           <Button className=" w-[90%] py-2 flex items-center gap-2 bg-gray-700 text-white">
             <Icon path={mdiCartOutline} className="h-5 block"></Icon>{" "}
             <p className="text-lg"> Add to cart</p>
