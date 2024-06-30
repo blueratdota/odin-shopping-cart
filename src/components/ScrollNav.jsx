@@ -85,13 +85,24 @@ const ScrollNav = () => {
                 />
               </Link>
               <div className="flex basis-full gap-5 my-auto justify-center [&>*]:shrink-0 overflow-clip">
-                <Link to={"ready-2-race"}>READY2RACE</Link>
-                <Link to={"wheel-bases"}>
+                <Link to={"all-products"} className="bg-link">
+                  ALL PRODUCTS
+                </Link>
+                <Link to={"wheel-bases"} className="bg-link">
                   RACING WHEELS/ DIRECT DRIVE BASES
                 </Link>
-                <Link to={"steering-wheels"}>STEERING WHEELS</Link>
-                <Link to={"pedals"}>PEDALS</Link>
-                <Link to={"pedals"}>SHIFTER/ PEDALS</Link>
+                <Link to={"steering-wheels"} className="bg-link">
+                  STEERING WHEELS
+                </Link>
+                <Link to={"pedals"} className="bg-link">
+                  PEDALS
+                </Link>
+                <Link to={"shifters/others"} className="bg-link">
+                  SHIFTER/OTHERS{" "}
+                </Link>
+                <Link to={"accessories"} className="bg-link">
+                  ACCESSORIES{" "}
+                </Link>
               </div>
               <div className="flex grow-0 items-center [&>div>svg]:scale-[0.4] [&>div]:w-[52px] [&>div]:grow-0 justify-end">
                 <SmallIconBtn icon={mdiHeartOutline}></SmallIconBtn>
@@ -162,8 +173,8 @@ const ScrollNav = () => {
                 />
               </Link>
               <div className="flex gap-5 my-auto justify-center [&>*]:shrink-0 overflow-clip">
-                <Link to={"ready-2-race"} className="bg-link">
-                  READY2RACE
+                <Link to={"all-products"} className="bg-link">
+                  ALL PRODUCTS
                 </Link>
                 <Link to={"wheel-bases"} className="bg-link">
                   RACING WHEELS/ DIRECT DRIVE BASES
@@ -174,8 +185,11 @@ const ScrollNav = () => {
                 <Link to={"pedals"} className="bg-link">
                   PEDALS
                 </Link>
-                <Link to={"pedals"} className="bg-link">
-                  SHIFTER/ PEDALS
+                <Link to={"shifters/others"} className="bg-link">
+                  SHIFTER/ OTHERS
+                </Link>
+                <Link to={"accessories"} className="bg-link">
+                  ACCESSORIES
                 </Link>
               </div>
               <div className="border-l border-gray-300 border-opacity-20 flex max-w-[350px] ">
