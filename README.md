@@ -1,10 +1,23 @@
-# React + Vite
+# Odin Shopping Cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live preview - https://papaya-fairy-763063.netlify.app
 
-Currently, two official plugins are available:
+# Features:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- add to do
+- add a project
+- put to do item in a project
 
-notenote - add margin top for drawer for scrolled down things
+# To be added/fixed:
+
+- accordion action buttons ✔
+- check toggle for to do entry (modify entry object {done:true}) ✔
+- edit edit-modal ✔
+- add notes functionality ✔
+- deletable notes ✔
+- design add note button ✔
+- click notes to view full size. only exit button. no modifications allowed ✔
+- max height for project list
+- style add project @ nav
+- project list items with some icon on the right ✔
+- add a remove action history, add clear history

@@ -26,10 +26,6 @@ const HomeTopSeller = () => {
             <Swiper
               slidesPerView={1}
               spaceBetween={0}
-              // autoplay={{
-              //   delay: 3000,
-              //   disableOnInteraction: false
-              // }}
               loop={true}
               pagination={{
                 clickable: true
@@ -38,9 +34,9 @@ const HomeTopSeller = () => {
               modules={[Pagination, Navigation, Autoplay]}
               className="mySwiper w-full max-h-[750px] z-0"
             >
-              {topSellers.map((item) => {
+              {topSellers.map((item, i) => {
                 return (
-                  <SwiperSlide className="">
+                  <SwiperSlide key={i} className="">
                     <TopSellerCard data={item}></TopSellerCard>
                   </SwiperSlide>
                 );
@@ -58,25 +54,15 @@ const HomeTopSeller = () => {
               modules={[Pagination]}
               className="mySwiper z-0"
             >
-              {topSellers.map((item) => {
+              {topSellers.map((item, i) => {
                 return (
-                  <SwiperSlide className="min-w-[330px]">
+                  <SwiperSlide key={i} className="min-w-[330px]">
                     <TopSellerCard data={item}></TopSellerCard>
                   </SwiperSlide>
                 );
               })}
             </Swiper>
           </div>
-
-          // <div className="pb-20 flex gap-5 overflow-auto">
-          //   {topSellers.map((item) => {
-          //     return (
-          //       <div className="max-h-[400px] min-w-[320px]">
-          //         <TopSellerCard data={item}></TopSellerCard>
-          //       </div>
-          //     );
-          //   })}
-          // </div>
         )}
       </div>
     </div>

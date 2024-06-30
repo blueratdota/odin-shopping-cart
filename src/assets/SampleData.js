@@ -56,7 +56,7 @@ const productData = [
     class: "Podium",
     category: "Wheel Bases",
     price: 190000,
-    availability: "In Stock",
+    availability: "No Stock",
     image: [
       "https://fanatec.com/media/image/17/0e/70/Podium_DD2_QR2_upgrade_top_banner_1280x1280.jpg",
       "https://fanatec.com/media/image/c9/07/7b/Product_Page_top_banner_P_WB_DD2_QR2_Rear_1280x1280.jpg",
@@ -344,7 +344,7 @@ const productData = [
     class: "CSL",
     category: "Pedals",
     price: 32100,
-    availability: "In Stock",
+    availability: "No Stock",
     image: [
       "https://fanatec.com/media/image/85/fa/46/Product_Page_top_banner_CSL_P_LC_Front_angled_1280x1280.jpg",
       "https://fanatec.com/media/image/9d/56/e5/Product_Page_top_banner_CSL_P_LC_Rear_angled_1280x1280.jpg"
@@ -554,7 +554,7 @@ const productData = [
     class: "CSL",
     category: "Steering Wheels",
     price: 32100,
-    availability: "In Stock",
+    availability: "No Stock",
     image: [
       "https://fanatec.com/media/image/78/24/b1/Product_Page_top_banner_McLaren_GT3_V2_1280x1280.jpg",
       "https://fanatec.com/media/image/7c/08/1a/Product_Page_top_banner_McLaren_GT3_V2_stickers_no_caps_1280x1280.jpg",
@@ -668,7 +668,7 @@ const productData = [
     class: "Podium",
     category: "Steering Wheels",
     price: 50600,
-    availability: "In Stock",
+    availability: "No Stock",
     image: [
       "https://fanatec.com/media/image/3c/79/6a/P_SW_RNASCAR_top_image_1_1280x1280.jpg",
       "https://fanatec.com/media/image/ed/ee/1e/P_SW_RNASCAR_top_image_2_1280x1280.jpg",
@@ -943,7 +943,7 @@ const productData = [
     class: "Podium",
     category: "Accessories",
     price: 16100,
-    availability: "In Stock",
+    availability: "No Stock",
     image: [
       "https://fanatec.com/media/image/b8/78/3c/Product_Page_top_banner_ESTOP_Prime_1280x1280.jpg",
       "https://fanatec.com/media/image/93/5e/4b/Product_Page_top_banner_ESTOP_Front_1280x1280.jpg",
@@ -1079,7 +1079,7 @@ const productData = [
     class: "ClubSport",
     category: "Accessories",
     price: 6500,
-    availability: "In Stock",
+    availability: "No Stock",
     image: [
       "https://fanatec.com/media/image/ce/39/23/CSS-TC-01Q21t06A3GNKJh_1280x1280.jpg",
       "https://fanatec.com/media/image/2c/0b/00/CSS-TC-2_1280x1280.jpg",

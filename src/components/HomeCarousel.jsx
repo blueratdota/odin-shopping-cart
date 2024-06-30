@@ -42,9 +42,9 @@ const HomeCarousel = () => {
           modules={[Pagination, Navigation, Autoplay]}
           className="mySwiper w-full h-[100vw] z-0"
         >
-          {smBannerPhotos.map((photo) => {
+          {smBannerPhotos.map((photo, i) => {
             return (
-              <SwiperSlide className="">
+              <SwiperSlide key={i} className="">
                 <div className="w-full h-full relative overflow-hidden">
                   <img
                     src={photo}
@@ -77,9 +77,9 @@ const HomeCarousel = () => {
           modules={[Pagination, Navigation, Autoplay]}
           className="mySwiper w-full h-[30vw] z-0"
         >
-          {bannerPhotos.map((photo) => {
+          {bannerPhotos.map((photo, i) => {
             return (
-              <SwiperSlide className="">
+              <SwiperSlide key={i} className="">
                 <div className="w-full h-full relative overflow-hidden">
                   <img
                     src={photo}
