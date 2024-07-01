@@ -153,6 +153,7 @@
   .series-img {
     @apply h-full w-full object-contain md:object-cover duration-75 ease-linear hover:scale-110;
   }
+  /* from black svg to grey-400 */
   .svg-filter {
     filter: invert(78%) sepia(11%) saturate(308%) hue-rotate(179deg)
       brightness(83%) contrast(85%);

@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { productData } from "./assets/SampleData";
 //import - components
@@ -10,9 +10,7 @@ function App() {
   return (
     <div className="bg-gray-800">
       <ScrollNav></ScrollNav>
-
       <Outlet></Outlet>
-
       <Footer></Footer>
     </div>
   );

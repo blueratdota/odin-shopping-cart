@@ -4,20 +4,17 @@ Live preview - https://papaya-fairy-763063.netlify.app
 
 # Features:
 
-- add to do
-- add a project
-- put to do item in a project
+- not functional yet
 
 # To be added/fixed:
 
-- accordion action buttons ✔
-- check toggle for to do entry (modify entry object {done:true}) ✔
-- edit edit-modal ✔
-- add notes functionality ✔
-- deletable notes ✔
-- design add note button ✔
-- click notes to view full size. only exit button. no modifications allowed ✔
-- max height for project list
-- style add project @ nav
-- project list items with some icon on the right ✔
-- add a remove action history, add clear history
+- format scrolled down mobile menu ✔
+- make favorites functional
+- add design to menu bar search
+- make search bar functional - when clicked - reveals search bar div. for mobile scrolled down, forces the viewport to go to top
+- make it so that drawers dont overlap each other (make a state for this at scroll nav)
+- format cart drawer
+- finish all products design
+- add content to per page
+- format the Product component for each product generated dynamically
+- make adding to cart functional

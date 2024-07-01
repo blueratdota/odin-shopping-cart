@@ -8,56 +8,94 @@ import {
   Input,
   Button
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+import { CloseIcon } from "@chakra-ui/icons";
 
 const MenuDrawer = ({ onClose, sticky }) => {
+  const backToTop = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <>
-      <DrawerOverlay onClick={onClose} />
-      <DrawerContent
-        className={`${sticky ? "bg-green-400" : "bg-blue-400"} max-w-xs absolute`}
-      >
-        <div className={`${sticky ? "mt-[50px]" : ""} bg-white`}>
-          <DrawerHeader>Create your account</DrawerHeader>
-          <DrawerCloseButton />
-        </div>
+      <DrawerOverlay onClick={onClose} className="backdrop-blur" />
+      <DrawerContent className={`bg-gray-100 max-w-xs absolute`}>
+        <DrawerHeader
+          className={`${sticky ? "mt-[50px]" : ""} bg-gray-700 text-white h-10 py-2 px-5 flex items-center justify-between`}
+          onClick={onClose}
+        >
+          <h2 className=" text-xl font-semibold">Close menu</h2>
+          <CloseIcon />
+        </DrawerHeader>
 
-        <DrawerBody>
-          <Input placeholder="Type here..." className="top-1/2" />
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
-          <div>xxx</div>
+        <DrawerBody className="p-4 text-lg">
+          <h3 className="font-semibold pb-5">Categories</h3>
+          <div className="flex flex-col font-medium pl-4 [&>*]:border-b [&>*]:py-4">
+            <Link
+              to={"all-products"}
+              onClick={() => {
+                onClose();
+                backToTop();
+              }}
+            >
+              ALL PRODUCTS
+            </Link>
+            <Link
+              to={"wheel-bases"}
+              onClick={() => {
+                onClose();
+                backToTop();
+              }}
+            >
+              RACING WHEELS/ DIRECT DRIVE BASES
+            </Link>
+            <Link
+              to={"steering-wheels"}
+              onClick={() => {
+                onClose();
+                backToTop();
+              }}
+            >
+              STEERING WHEELS
+            </Link>
+            <Link
+              to={"pedals"}
+              onClick={() => {
+                onClose();
+                backToTop();
+              }}
+            >
+              PEDALS
+            </Link>
+            <Link
+              to={"shifters/others"}
+              onClick={() => {
+                onClose();
+                backToTop();
+              }}
+            >
+              SHIFTER/OTHERS{" "}
+            </Link>
+            <Link
+              to={"accessories"}
+              onClick={() => {
+                onClose();
+                backToTop();
+              }}
+            >
+              ACCESSORIES{" "}
+            </Link>
+            <Link
+              to={"/"}
+              className="font-semibold"
+              onClick={() => {
+                onClose();
+                backToTop();
+              }}
+            >
+              GO BACK TO HOME{" "}
+            </Link>
+          </div>
         </DrawerBody>
-
-        <DrawerFooter>
-          <Button variant="outline" mr={3} onClick={onClose}>
-            Cancel
-          </Button>
-          <Button colorScheme="blue">Save</Button>
-        </DrawerFooter>
       </DrawerContent>
     </>
   );
