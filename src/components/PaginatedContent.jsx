@@ -5,7 +5,7 @@ import ProductCard from "./ProductCard";
 import { MenuItem, Select, Pagination, Button } from "@mui/material";
 // Import Chakra
 import { TriangleDownIcon } from "@chakra-ui/icons";
-const PaginatedContent = ({ data }) => {
+const PaginatedContent = ({ data, filter }) => {
   const localData = data;
   const [currPage, setCurrPage] = useState(1);
   const [cardPerPage, setCardPerPage] = useState(6);
@@ -29,9 +29,17 @@ const PaginatedContent = ({ data }) => {
   };
 
   // get current posts and sorting
+  const filteredData = (() => {
+    if (filter) {
+      return data.filter((item) => {
+        return item.category == filter;
+      });
+    }
+    return data;
+  })();
   const indexOfLastPost = currPage * cardPerPage;
   const indexOfFirstPost = indexOfLastPost - cardPerPage;
-  const sortedPost = data.sort(function (a, b) {
+  const sortedPost = filteredData.sort(function (a, b) {
     if (sortAsc) {
       return a[sortType] > b[sortType] ? 1 : -1;
     }
@@ -52,8 +60,12 @@ const PaginatedContent = ({ data }) => {
               className="h-10 ml-4"
             >
               <MenuItem value={6}>6</MenuItem>
-              <MenuItem value={12}>12</MenuItem>
-              <MenuItem value={18}>18</MenuItem>
+              {filteredData.length > 6 ? (
+                <MenuItem value={12}>12</MenuItem>
+              ) : null}
+              {filteredData.length > 12 ? (
+                <MenuItem value={18}>18</MenuItem>
+              ) : null}
             </Select>
           </div>
         </label>
@@ -90,7 +102,7 @@ const PaginatedContent = ({ data }) => {
         </div>
       </div>
       <Pagination
-        count={Math.ceil(localData.length / cardPerPage)}
+        count={Math.ceil(filteredData.length / cardPerPage)}
         className="flex justify-center pt-6 "
         onChange={handlePageChange}
       ></Pagination>

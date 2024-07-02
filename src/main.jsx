@@ -24,9 +24,9 @@ const router = createBrowserRouter([
       { path: "wheel-bases/:id", element: <Product /> },
       { path: "steering-wheels", element: <SteeringWheels /> },
       { path: "steering-wheels/:id", element: <Product /> },
-      { path: "pedals", element: <Shifters /> },
+      { path: "pedals", element: <Pedals /> },
       { path: "pedals/:id", element: <Product /> },
-      { path: "shifters/others", element: <Pedals /> },
+      { path: "shifters/others", element: <Shifters /> },
       { path: "shifters/others/:id", element: <Product /> },
       { path: "accessories", element: <Accessories /> },
       { path: "accessories/:id", element: <Product /> }

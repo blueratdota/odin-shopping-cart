@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 // Import Data
 import { productData } from "../assets/SampleData";
 // Import Responsive

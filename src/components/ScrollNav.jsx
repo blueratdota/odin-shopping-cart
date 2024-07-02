@@ -37,6 +37,9 @@ const ScrollNav = () => {
     // console.log(window.scrollY);
     window.scrollY > 64 ? setStiky(true) : setStiky(false);
   };
+  const backToTop = () => {
+    window.scrollTo(0, 0);
+  };
 
   window.addEventListener("scroll", changeBackground);
 
@@ -77,7 +80,7 @@ const ScrollNav = () => {
           ) : (
             //=============SMALL SIZE SCROLLED DOWN
             <div className="pl-4 h-[51px] flex items-center border-y border-gray-300 border-opacity-20 [&>*]:text-white">
-              <Link className="basis-[10%]" to={"/"}>
+              <Link className="basis-[10%]" to={"/"} onClick={backToTop}>
                 <img
                   className="w-[32px]  "
                   src={fanatecShortLogo}
@@ -85,22 +88,42 @@ const ScrollNav = () => {
                 />
               </Link>
               <div className="flex basis-full gap-5 my-auto justify-center [&>*]:shrink-0 overflow-clip">
-                <Link to={"all-products"} className="bg-link">
+                <Link
+                  to={"all-products"}
+                  className="bg-link"
+                  onClick={backToTop}
+                >
                   ALL PRODUCTS
                 </Link>
-                <Link to={"wheel-bases"} className="bg-link">
+                <Link
+                  to={"wheel-bases"}
+                  className="bg-link"
+                  onClick={backToTop}
+                >
                   RACING WHEELS/ DIRECT DRIVE BASES
                 </Link>
-                <Link to={"steering-wheels"} className="bg-link">
+                <Link
+                  to={"steering-wheels"}
+                  className="bg-link"
+                  onClick={backToTop}
+                >
                   STEERING WHEELS
                 </Link>
-                <Link to={"pedals"} className="bg-link">
+                <Link to={"pedals"} className="bg-link" onClick={backToTop}>
                   PEDALS
                 </Link>
-                <Link to={"shifters/others"} className="bg-link">
+                <Link
+                  to={"shifters/others"}
+                  className="bg-link"
+                  onClick={backToTop}
+                >
                   SHIFTER/OTHERS{" "}
                 </Link>
-                <Link to={"accessories"} className="bg-link">
+                <Link
+                  to={"accessories"}
+                  className="bg-link"
+                  onClick={backToTop}
+                >
                   ACCESSORIES{" "}
                 </Link>
               </div>
@@ -142,7 +165,7 @@ const ScrollNav = () => {
             </div>
           </div>
         ) : (
-          // ===============BIG SIZE FOR SCROLLED DOWN
+          // ===============BIG SIZE FOR un-SCROLLED DOWN
           <div className="">
             <div className="[&>div>*]:h-6 [&>div>*]:text-white [&>div>p]:font-thin flex justify-end gap-6 px-6 py-2">
               <div className="flex gap-2 items-center bg-icon">
