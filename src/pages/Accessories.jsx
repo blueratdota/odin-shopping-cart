@@ -53,6 +53,7 @@ const Accessories = () => {
       <PaginatedContent
         data={productData}
         filter={"Accessories"}
+        routerLink={"accessories"}
       ></PaginatedContent>
     </div>
   );

@@ -2,7 +2,8 @@ import { Button } from "@chakra-ui/react";
 import Icon from "@mdi/react";
 import { mdiCartOutline } from "@mdi/js";
 import numeral from "numeral";
-const ProductCard = ({ data }) => {
+import { Link } from "react-router-dom";
+const ProductCard = ({ data, routerLink }) => {
   const productClass = data.class;
   const productName = data.name;
   const productPrice = numeral(data.price).format("0,0");
@@ -19,47 +20,49 @@ const ProductCard = ({ data }) => {
     "No Stock": { circle: "bg-red-400", text: "text-red-400" }
   };
   return (
-    <div className=" relative mx-5 pb-6 border shadow-sm overflow-hidden [&>*]:font-medium flex flex-col justify-between">
-      <div
-        className={`${classColors[productClass]} w-fit py-2 px-4 text-white absolute `}
-      >
-        {productClass}
-      </div>
-      <div
-        className={`bg-teal-600 w-fit py-2 px-4 top-12 text-white absolute ${data.category == "Wheel Bases" ? "" : "hidden"}`}
-      >
-        Bundle
-      </div>
-      <img
-        src={data.thumbnail}
-        alt=""
-        className="w-[75%] max-h-[75%] object-cover object-bottom mx-auto pt-10 pb-5"
-      />
+    <Link to={`/${routerLink}/${data.id}`}>
+      <div className=" relative mx-5 pb-6 border shadow-sm overflow-hidden [&>*]:font-medium flex flex-col justify-between">
+        <div
+          className={`${classColors[productClass]} w-fit py-2 px-4 text-white absolute `}
+        >
+          {productClass}
+        </div>
+        <div
+          className={`bg-teal-600 w-fit py-2 px-4 top-12 text-white absolute ${data.category == "Wheel Bases" ? "" : "hidden"}`}
+        >
+          Bundle
+        </div>
+        <img
+          src={data.thumbnail}
+          alt=""
+          className="w-[75%] max-h-[75%] object-cover object-bottom mx-auto pt-10 pb-5"
+        />
 
-      <div className="">
-        <div className="text-center flex flex-col gap-2">
-          <p className="text-xl font-semibold">{productName}</p>
-          <p className="text-emerald-500 text-lg  ">¥ {productPrice}</p>
-          <div className="flex justify-center items-center content-center gap-3">
-            <div
-              className={`${availablityColor[data.availability].circle} size-4 rounded-[50%] opacity-50`}
-            ></div>
-            <div
-              className={`${availablityColor[data.availability].text} text-lg`}
-            >
-              {data.availability}
+        <div className="">
+          <div className="text-center flex flex-col gap-2">
+            <p className="text-xl font-semibold">{productName}</p>
+            <p className="text-emerald-500 text-lg  ">¥ {productPrice}</p>
+            <div className="flex justify-center items-center content-center gap-3">
+              <div
+                className={`${availablityColor[data.availability].circle} size-4 rounded-[50%] opacity-50`}
+              ></div>
+              <div
+                className={`${availablityColor[data.availability].text} text-lg`}
+              >
+                {data.availability}
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="flex justify-center pt-5">
-          <Button className=" w-[90%] py-2 flex items-center gap-2 bg-gray-700 text-white">
-            <Icon path={mdiCartOutline} className="h-5 block"></Icon>{" "}
-            <p className="text-lg"> Add to cart</p>
-          </Button>
+          <div className="flex justify-center pt-5">
+            <Button className=" w-[90%] py-2 flex items-center gap-2 bg-gray-700 text-white">
+              <Icon path={mdiCartOutline} className="h-5 block"></Icon>{" "}
+              <p className="text-lg"> Add to cart</p>
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 export default ProductCard;

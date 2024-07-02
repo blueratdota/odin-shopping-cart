@@ -59,6 +59,7 @@ function SteeringWheels() {
       <PaginatedContent
         data={productData}
         filter={"Steering Wheels"}
+        routerLink={"steering-wheels"}
       ></PaginatedContent>
     </div>
   );

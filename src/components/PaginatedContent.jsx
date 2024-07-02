@@ -5,7 +5,7 @@ import ProductCard from "./ProductCard";
 import { MenuItem, Select, Pagination, Button } from "@mui/material";
 // Import Chakra
 import { TriangleDownIcon } from "@chakra-ui/icons";
-const PaginatedContent = ({ data, filter }) => {
+const PaginatedContent = ({ data, filter, routerLink }) => {
   const localData = data;
   const [currPage, setCurrPage] = useState(1);
   const [cardPerPage, setCardPerPage] = useState(6);
@@ -97,7 +97,9 @@ const PaginatedContent = ({ data, filter }) => {
       <div className="w-full h-fit  ">
         <div className="  md:grid md:grid-cols-2 xl:grid-cols-3  md:gap-5 xl:gap-10 ">
           {currentPosts.map((data) => {
-            return <ProductCard key={data.id} data={data} />;
+            return (
+              <ProductCard key={data.id} data={data} routerLink={routerLink} />
+            );
           })}
         </div>
       </div>

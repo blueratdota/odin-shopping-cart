@@ -57,6 +57,7 @@ const Shifters = () => {
       <PaginatedContent
         data={productData}
         filter={"Shifters/Others"}
+        routerLink={"shifters/others"}
       ></PaginatedContent>
     </div>
   );

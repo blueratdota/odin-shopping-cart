@@ -63,6 +63,7 @@ const WheelBases = () => {
       <PaginatedContent
         data={productData}
         filter={"Wheel Bases"}
+        routerLink={"wheel-bases"}
       ></PaginatedContent>
     </div>
   );

@@ -77,7 +77,10 @@ const AllProducts = () => {
           </p>
         </div>
       </div>
-      <PaginatedContent data={productData}></PaginatedContent>
+      <PaginatedContent
+        data={productData}
+        routerLink={"all-products"}
+      ></PaginatedContent>
     </div>
   );
 };

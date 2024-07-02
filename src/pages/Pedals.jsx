@@ -51,7 +51,11 @@ function Pedals() {
         </>
       )}
 
-      <PaginatedContent data={productData} filter={"Pedals"}></PaginatedContent>
+      <PaginatedContent
+        data={productData}
+        filter={"Pedals"}
+        routerLink={"pedals"}
+      ></PaginatedContent>
     </div>
   );
 }
