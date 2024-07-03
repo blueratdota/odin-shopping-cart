@@ -224,7 +224,7 @@ const ScrollNav = () => {
         )}
       </nav>
       <Drawer isOpen={isOpenCart} placement="right" onClose={onCloseCart}>
-        <CartDrawer onClose={onCloseCart}></CartDrawer>
+        <CartDrawer onClose={onCloseCart} sticky={sticky}></CartDrawer>
       </Drawer>
       <Drawer isOpen={isOpenMenu} placement="right" onClose={onCloseMenu}>
         <MenuDrawer onClose={onCloseMenu} sticky={sticky}></MenuDrawer>

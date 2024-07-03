@@ -19,9 +19,12 @@ const ProductCard = ({ data, routerLink }) => {
     "Pre-Order": { circle: "bg-yellow-400", text: "text-yellow-400" },
     "No Stock": { circle: "bg-red-400", text: "text-red-400" }
   };
+  const backToTop = () => {
+    window.scrollTo(0, 0);
+  };
   return (
-    <Link to={`/${routerLink}/${data.id}`}>
-      <div className=" relative mx-5 pb-6 border shadow-sm overflow-hidden [&>*]:font-medium flex flex-col justify-between">
+    <div className=" relative mx-5 pb-6 border shadow-sm overflow-hidden [&>*]:font-medium flex flex-col justify-between">
+      <Link to={`/${routerLink}/${data.id}`} onClick={backToTop}>
         <div
           className={`${classColors[productClass]} w-fit py-2 px-4 text-white absolute `}
         >
@@ -38,31 +41,29 @@ const ProductCard = ({ data, routerLink }) => {
           className="w-[75%] max-h-[75%] object-cover object-bottom mx-auto pt-10 pb-5"
         />
 
-        <div className="">
-          <div className="text-center flex flex-col gap-2">
-            <p className="text-xl font-semibold">{productName}</p>
-            <p className="text-emerald-500 text-lg  ">¥ {productPrice}</p>
-            <div className="flex justify-center items-center content-center gap-3">
-              <div
-                className={`${availablityColor[data.availability].circle} size-4 rounded-[50%] opacity-50`}
-              ></div>
-              <div
-                className={`${availablityColor[data.availability].text} text-lg`}
-              >
-                {data.availability}
-              </div>
+        <div className="text-center flex flex-col gap-2">
+          <p className="text-xl font-semibold">{productName}</p>
+          <p className="text-emerald-500 text-lg  ">¥ {productPrice}</p>
+          <div className="flex justify-center items-center content-center gap-3">
+            <div
+              className={`${availablityColor[data.availability].circle} size-4 rounded-[50%] opacity-50`}
+            ></div>
+            <div
+              className={`${availablityColor[data.availability].text} text-lg`}
+            >
+              {data.availability}
             </div>
           </div>
-
-          <div className="flex justify-center pt-5">
-            <Button className=" w-[90%] py-2 flex items-center gap-2 bg-gray-700 text-white">
-              <Icon path={mdiCartOutline} className="h-5 block"></Icon>{" "}
-              <p className="text-lg"> Add to cart</p>
-            </Button>
-          </div>
         </div>
+      </Link>
+
+      <div className="flex justify-center pt-5">
+        <Button className=" w-[90%] py-2 flex items-center gap-2 bg-gray-700 text-white">
+          <Icon path={mdiCartOutline} className="h-5 block"></Icon>{" "}
+          <p className="text-lg"> Add to cart</p>
+        </Button>
       </div>
-    </Link>
+    </div>
   );
 };
 export default ProductCard;

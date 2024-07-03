@@ -16,5 +16,7 @@ Live preview - https://papaya-fairy-763063.netlify.app
 - format cart drawer
 - finish all products design ✔
 - add content to per page ✔
-- format the Product component for each product generated dynamically
+- format the Product component for each product generated dynamically ✔
 - make adding to cart functional
+- check the scrolling up down when moving to another page
+- make the data fixed. store in local data

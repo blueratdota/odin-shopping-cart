@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -12,6 +13,10 @@ import { useMediaQuery } from "react-responsive";
 // Import data
 import { topSellers } from "../assets/SampleData";
 import TopSellerCard from "./TopSellerCard";
+
+const backToTop = () => {
+  window.scrollTo(0, 0);
+};
 
 const HomeTopSeller = () => {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 720px)" });
@@ -37,7 +42,9 @@ const HomeTopSeller = () => {
               {topSellers.map((item, i) => {
                 return (
                   <SwiperSlide key={i} className="">
-                    <TopSellerCard data={item}></TopSellerCard>
+                    <Link to={`/all-products/${item.id}`} onClick={backToTop}>
+                      <TopSellerCard data={item}></TopSellerCard>
+                    </Link>
                   </SwiperSlide>
                 );
               })}

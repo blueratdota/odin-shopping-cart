@@ -8,25 +8,31 @@ import {
   Input,
   Button
 } from "@chakra-ui/react";
+import { CloseIcon } from "@chakra-ui/icons";
 
-const CartDrawer = ({ onClose }) => {
+const backToTop = () => {
+  window.scrollTo(0, 0);
+};
+
+const CartDrawer = ({ onClose, sticky }) => {
   return (
     <>
-      <DrawerOverlay className="" />
-      <DrawerContent className="bg-orange-400 max-w-xs relative">
-        <DrawerCloseButton />
-        <DrawerHeader>Create your account</DrawerHeader>
+      <DrawerOverlay onClick={onClose} className="backdrop-blur" />
+      <DrawerContent className={`bg-gray-100 max-w-xs absolute`}>
+        <DrawerHeader
+          className={`${sticky ? "mt-[50px]" : ""} bg-red-700 -700 text-white h-10 py-2 px-5 flex items-center justify-between`}
+          onClick={onClose}
+        >
+          <h2 className=" text-xl font-semibold">Close cart</h2>
+          <CloseIcon />
+        </DrawerHeader>
 
-        <DrawerBody>
-          <Input placeholder="Type here..." />
+        <DrawerBody className="p-4 text-lg">
+          <h3 className="font-semibold pb-5">
+            It looks like your cart is empty
+          </h3>
+          <div className="flex flex-col font-medium pl-4 [&>*]:border-b [&>*]:py-4"></div>
         </DrawerBody>
-
-        <DrawerFooter>
-          <Button variant="outline" mr={3} onClick={onClose}>
-            Cancel
-          </Button>
-          <Button colorScheme="blue">Save</Button>
-        </DrawerFooter>
       </DrawerContent>
     </>
   );
