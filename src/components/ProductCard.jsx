@@ -2,7 +2,7 @@ import { Button } from "@chakra-ui/react";
 import Icon from "@mdi/react";
 import { mdiCartOutline } from "@mdi/js";
 import numeral from "numeral";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 const ProductCard = ({ data, routerLink }) => {
   const productClass = data.class;
   const productName = data.name;
@@ -22,6 +22,8 @@ const ProductCard = ({ data, routerLink }) => {
   const backToTop = () => {
     window.scrollTo(0, 0);
   };
+  const context = useOutletContext();
+  // console.log(context);
   return (
     <div className=" relative mx-5 pb-6 border shadow-sm overflow-hidden [&>*]:font-medium flex flex-col justify-between">
       <Link to={`/${routerLink}/${data.id}`} onClick={backToTop}>
@@ -58,7 +60,28 @@ const ProductCard = ({ data, routerLink }) => {
       </Link>
 
       <div className="flex justify-center pt-5">
-        <Button className=" w-[90%] py-2 flex items-center gap-2 bg-gray-700 text-white">
+        <Button
+          className=" w-[90%] py-2 flex items-center gap-2 bg-gray-700 text-white"
+          onClick={() => {
+            // turn this into a function
+            // creates a local var with all the unique ids in the inCart
+            // if currrently being added item to cart's id is included inCart, only ++quantity
+            // else create a new array entry in inCart
+            const cartItemsID = context.inCart.map((entry) => {
+              return entry.id;
+            });
+            if (cartItemsID.includes(data.id)) {
+              context.setInCart(
+                context.inCart.map((item) => {
+                  if (item.id == data.id) {
+                    return { ...data, quantity: item.quantity + 1 };
+                  } else return item;
+                })
+              );
+            } else
+              context.setInCart([...context.inCart, { ...data, quantity: 1 }]);
+          }}
+        >
           <Icon path={mdiCartOutline} className="h-5 block"></Icon>{" "}
           <p className="text-lg"> Add to cart</p>
         </Button>

@@ -1,12 +1,16 @@
 // Import Data
-import { productData } from "../assets/SampleData";
+// import { productData } from "../assets/SampleData";
 // Import Responsive
 import { useMediaQuery } from "react-responsive";
 // Import Chakra
 
 import PaginatedContent from "../components/PaginatedContent";
+//Import router
+import { useOutletContext } from "react-router-dom";
 
 const AllProducts = () => {
+  const context = useOutletContext();
+  const productData = context.allProducts;
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 720px)" });
   return (
     <div className="bg-white pb-10">

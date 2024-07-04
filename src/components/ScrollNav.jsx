@@ -18,7 +18,7 @@ import SmallIconBtn from "./SmallIconButton";
 import CartDrawer from "./CartDrawer";
 import MenuDrawer from "./MenuDrawer";
 
-const ScrollNav = () => {
+const ScrollNav = ({ inCart, setInCart }) => {
   const [sticky, setStiky] = useState(false);
   //for drawer
   const {
@@ -224,7 +224,12 @@ const ScrollNav = () => {
         )}
       </nav>
       <Drawer isOpen={isOpenCart} placement="right" onClose={onCloseCart}>
-        <CartDrawer onClose={onCloseCart} sticky={sticky}></CartDrawer>
+        <CartDrawer
+          onClose={onCloseCart}
+          sticky={sticky}
+          inCart={inCart}
+          setInCart={setInCart}
+        ></CartDrawer>
       </Drawer>
       <Drawer isOpen={isOpenMenu} placement="right" onClose={onCloseMenu}>
         <MenuDrawer onClose={onCloseMenu} sticky={sticky}></MenuDrawer>

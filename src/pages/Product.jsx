@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { productData } from "../assets/SampleData";
+// import { productData } from "../assets/SampleData";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -17,6 +17,8 @@ import {
   mdiCheckAll,
   mdiClose
 } from "@mdi/js";
+//Import router
+import { useOutletContext } from "react-router-dom";
 
 //color for circle/button
 const availablityColor = {
@@ -26,33 +28,16 @@ const availablityColor = {
 };
 
 function Product() {
+  const context = useOutletContext();
+  const productData = context.allProducts;
+
   const { id } = useParams();
   const product = productData.filter((item) => {
     return item.id == id;
   })[0];
-  console.log(product);
+  // console.log(product);
   return (
     <div className="bg-imgGray">
-      {/* <div className="w-full h-[100vw] relative">
-        <div className="w-full h-full relative overflow-hidden">
-          <img
-            src={product.image[0]}
-            alt=""
-            className="w-full h-full object-contain object-top"
-          />
-          <div className="absolute -translate-x-1/2 top-1/2 left-1/2  w-[350px] text-gray-300">
-            <h1 className="text-5xl font-medium text-center">
-              SHIFTERS / OTHERS
-            </h1>
-            <div className="w-20  h-1 bg-red-600 blur-[1px] my-7 mx-auto"></div>
-            <p className="text-xl text-center">
-              Enhance your sim setup by upgrading to our precision peripherals.
-              H-pattern shifters and analogue handbrakes deliver superior
-              realism for many driving disciplines.
-            </p>
-          </div>
-        </div>
-      </div> */}
       <Swiper
         slidesPerView={1}
         spaceBetween={0}
@@ -131,9 +116,9 @@ function Product() {
         <div className="mx-4 py-10">
           <p className="text-xl indent-2">{product.description}</p>
           <ul className="pt-5 ">
-            {product.features.map((entry) => {
+            {product.features.map((entry, i) => {
               return (
-                <li className="flex">
+                <li key={i} className="flex">
                   <div>*</div>
                   <p>{entry}</p>
                 </li>

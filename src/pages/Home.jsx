@@ -3,7 +3,6 @@ import HomeCategories from "../components/HomeCategories";
 import HomeContent from "../components/HomeContent";
 import HomeSeries from "../components/HomeSeries";
 import HomeTopSeller from "../components/HomeTopSeller";
-import { useEffect } from "react";
 
 function Home() {
   return (

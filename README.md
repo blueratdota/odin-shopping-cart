@@ -20,3 +20,6 @@ Live preview - https://papaya-fairy-763063.netlify.app
 - make adding to cart functional
 - check the scrolling up down when moving to another page
 - make the data fixed. store in local data
+- add image lazy loading
+- add CartCard +/- quantity
+- add modals to confirm delete of added cart item
