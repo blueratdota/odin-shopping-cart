@@ -11,17 +11,26 @@ import {
 import { Link } from "react-router-dom";
 import { CloseIcon } from "@chakra-ui/icons";
 
-const MenuDrawer = ({ onClose, sticky }) => {
+const MenuDrawer = ({ onClose, sticky, setIsDrawerOpen }) => {
   const backToTop = () => {
     window.scrollTo(0, 0);
   };
   return (
     <>
-      <DrawerOverlay onClick={onClose} className="backdrop-blur" />
+      <DrawerOverlay
+        onClick={() => {
+          onClose();
+          setIsDrawerOpen(false);
+        }}
+        className="backdrop-blur"
+      />
       <DrawerContent className={`bg-gray-100 max-w-xs absolute`}>
         <DrawerHeader
           className={`${sticky ? "mt-[50px]" : ""} bg-gray-700 text-white h-10 py-2 px-5 flex items-center justify-between`}
-          onClick={onClose}
+          onClick={() => {
+            onClose();
+            setIsDrawerOpen(false);
+          }}
         >
           <h2 className=" text-xl font-semibold">Close menu</h2>
           <CloseIcon />
@@ -35,6 +44,7 @@ const MenuDrawer = ({ onClose, sticky }) => {
               onClick={() => {
                 onClose();
                 backToTop();
+                setIsDrawerOpen(false);
               }}
             >
               ALL PRODUCTS
@@ -44,6 +54,7 @@ const MenuDrawer = ({ onClose, sticky }) => {
               onClick={() => {
                 onClose();
                 backToTop();
+                setIsDrawerOpen(false);
               }}
             >
               RACING WHEELS/ DIRECT DRIVE BASES
@@ -53,6 +64,7 @@ const MenuDrawer = ({ onClose, sticky }) => {
               onClick={() => {
                 onClose();
                 backToTop();
+                setIsDrawerOpen(false);
               }}
             >
               STEERING WHEELS
@@ -62,6 +74,7 @@ const MenuDrawer = ({ onClose, sticky }) => {
               onClick={() => {
                 onClose();
                 backToTop();
+                setIsDrawerOpen(false);
               }}
             >
               PEDALS
@@ -71,6 +84,7 @@ const MenuDrawer = ({ onClose, sticky }) => {
               onClick={() => {
                 onClose();
                 backToTop();
+                setIsDrawerOpen(false);
               }}
             >
               SHIFTER/OTHERS{" "}
@@ -80,6 +94,7 @@ const MenuDrawer = ({ onClose, sticky }) => {
               onClick={() => {
                 onClose();
                 backToTop();
+                setIsDrawerOpen(false);
               }}
             >
               ACCESSORIES{" "}
@@ -90,6 +105,7 @@ const MenuDrawer = ({ onClose, sticky }) => {
               onClick={() => {
                 onClose();
                 backToTop();
+                setIsDrawerOpen(false);
               }}
             >
               GO BACK TO HOME{" "}

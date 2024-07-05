@@ -67,7 +67,9 @@ const HomeTopSeller = () => {
               {topSellers.map((item, i) => {
                 return (
                   <SwiperSlide key={i} className="min-w-[330px]">
-                    <TopSellerCard data={item}></TopSellerCard>
+                    <Link to={`/all-products/${item.id}`} onClick={backToTop}>
+                      <TopSellerCard data={item}></TopSellerCard>
+                    </Link>
                   </SwiperSlide>
                 );
               })}

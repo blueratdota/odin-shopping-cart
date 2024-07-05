@@ -20,6 +20,7 @@ import MenuDrawer from "./MenuDrawer";
 
 const ScrollNav = ({ inCart, setInCart }) => {
   const [sticky, setStiky] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   //for drawer
   const {
     isOpen: isOpenCart,
@@ -56,7 +57,7 @@ const ScrollNav = ({ inCart, setInCart }) => {
           isTabletOrMobile ? (
             //=============SMALL SIZE SCROLLED DOWN
             <div className="pl-4 h-[51px] flex items-center border-y border-gray-300 border-opacity-20 ">
-              <Link className="basis-[40%]" to={"/"}>
+              <Link className="basis-[40%]" to={"/"} onClick={backToTop}>
                 <img
                   className="w-[32px]  "
                   src={fanatecShortLogo}
@@ -68,12 +69,22 @@ const ScrollNav = ({ inCart, setInCart }) => {
                 <SmallIconBtn icon={mdiAccount}></SmallIconBtn>
                 <SmallIconBtn
                   icon={mdiCartOutline}
-                  onClick={onOpenCart}
+                  onClick={() => {
+                    if (!isDrawerOpen) {
+                      onOpenCart();
+                      setIsDrawerOpen(true);
+                    }
+                  }}
                 ></SmallIconBtn>
                 <SmallIconBtn icon={mdiMagnify}></SmallIconBtn>
                 <SmallIconBtn
                   icon={mdiMenu}
-                  onClick={onOpenMenu}
+                  onClick={() => {
+                    if (!isDrawerOpen) {
+                      onOpenMenu();
+                      setIsDrawerOpen(true);
+                    }
+                  }}
                 ></SmallIconBtn>
               </div>
             </div>
@@ -132,7 +143,12 @@ const ScrollNav = ({ inCart, setInCart }) => {
                 <SmallIconBtn icon={mdiAccount}></SmallIconBtn>
                 <SmallIconBtn
                   icon={mdiCartOutline}
-                  onClick={onOpenCart}
+                  onClick={() => {
+                    if (!isDrawerOpen) {
+                      onOpenCart();
+                      setIsDrawerOpen(true);
+                    }
+                  }}
                 ></SmallIconBtn>
                 <SmallIconBtn icon={mdiMagnify}></SmallIconBtn>
               </div>
@@ -144,10 +160,18 @@ const ScrollNav = ({ inCart, setInCart }) => {
             <div className="[&>*]:h-6 [&>*]:text-white flex justify-end gap-6 px-6 py-2">
               <Icon path={mdiHeartOutline} />
               <Icon path={mdiAccount} />
-              <Icon path={mdiCartOutline} onClick={onOpenCart} />
+              <Icon
+                path={mdiCartOutline}
+                onClick={() => {
+                  if (!isDrawerOpen) {
+                    onOpenCart();
+                    setIsDrawerOpen(true);
+                  }
+                }}
+              />
             </div>
             <div className="pl-4 h-[64px] flex items-center border-y border-gray-300 border-opacity-20 ">
-              <Link className="basis-[50%]" to={"/"}>
+              <Link className="basis-[50%]" to={"/"} onClick={backToTop}>
                 <img
                   className="w-[180px]  "
                   src={fanatecFullLogo}
@@ -158,7 +182,15 @@ const ScrollNav = ({ inCart, setInCart }) => {
                 <div className="flex-auto border-x border-gray-300 border-opacity-20">
                   <Icon path={mdiMagnify} />
                 </div>
-                <div className="flex-auto" onClick={onOpenMenu}>
+                <div
+                  className="flex-auto"
+                  onClick={() => {
+                    if (!isDrawerOpen) {
+                      onOpenMenu();
+                      setIsDrawerOpen(true);
+                    }
+                  }}
+                >
                   <Icon path={mdiMenu} />
                 </div>
               </div>
@@ -178,7 +210,12 @@ const ScrollNav = ({ inCart, setInCart }) => {
               </div>
               <div
                 className="flex gap-2 items-center bg-icon"
-                onClick={onOpenCart}
+                onClick={() => {
+                  if (!isDrawerOpen) {
+                    onOpenCart();
+                    setIsDrawerOpen(true);
+                  }
+                }}
               >
                 <Icon path={mdiCartOutline} />
                 <p>Cart</p>
@@ -188,6 +225,7 @@ const ScrollNav = ({ inCart, setInCart }) => {
               <Link
                 className="basis-[20%] max-w-[250px] my-auto pl-4 grow "
                 to={"/"}
+                onClick={backToTop}
               >
                 <img
                   className="w-[180px] "
@@ -229,10 +267,15 @@ const ScrollNav = ({ inCart, setInCart }) => {
           sticky={sticky}
           inCart={inCart}
           setInCart={setInCart}
+          setIsDrawerOpen={setIsDrawerOpen}
         ></CartDrawer>
       </Drawer>
       <Drawer isOpen={isOpenMenu} placement="right" onClose={onCloseMenu}>
-        <MenuDrawer onClose={onCloseMenu} sticky={sticky}></MenuDrawer>
+        <MenuDrawer
+          onClose={onCloseMenu}
+          sticky={sticky}
+          setIsDrawerOpen={setIsDrawerOpen}
+        ></MenuDrawer>
       </Drawer>
     </>
   );

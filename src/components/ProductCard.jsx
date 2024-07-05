@@ -81,6 +81,11 @@ const ProductCard = ({ data, routerLink }) => {
             } else
               context.setInCart([...context.inCart, { ...data, quantity: 1 }]);
           }}
+          isDisabled={(() => {
+            if (data.availability == "No Stock") {
+              return true;
+            } else return false;
+          })()}
         >
           <Icon path={mdiCartOutline} className="h-5 block"></Icon>{" "}
           <p className="text-lg"> Add to cart</p>

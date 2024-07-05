@@ -14,9 +14,9 @@ Live preview - https://papaya-fairy-763063.netlify.app
 - make favorites functional
 - add design to menu bar search
 - make search bar functional - when clicked - reveals search bar div. for mobile scrolled down, forces the viewport to go to top
-- make it so that drawers dont overlap each other (make a state for this at scroll nav)
+- make it so that drawers dont overlap each other (make a state for this at scroll nav) ✔
 - format cart drawer ✔
-- add total and checkout in cart drawer
+- add total and checkout in cart drawer ✔
 - finish all products design ✔
 - add content to per page ✔
 - format the Product component for each product generated dynamically ✔
@@ -27,5 +27,6 @@ Live preview - https://papaya-fairy-763063.netlify.app
 - add CartCard +/- quantity ✔
 - add modals to confirm delete of added cart item ✔
 - preorder items shouls have a preorder tag on CartCard
-- disable adding to cart for no stock items
-- make a big screen mode for Product Component
+- disable adding to cart for no stock items ✔
+- make a big screen mode for Product Component ✔
+- add a checkout page?
