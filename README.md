@@ -4,7 +4,9 @@ Live preview - https://papaya-fairy-763063.netlify.app
 
 # Features:
 
-- not functional yet
+- adding to cart works
+- adding to favorite doesnt work
+- searching products doesnt work
 
 # To be added/fixed:
 
@@ -13,13 +15,17 @@ Live preview - https://papaya-fairy-763063.netlify.app
 - add design to menu bar search
 - make search bar functional - when clicked - reveals search bar div. for mobile scrolled down, forces the viewport to go to top
 - make it so that drawers dont overlap each other (make a state for this at scroll nav)
-- format cart drawer
+- format cart drawer ✔
+- add total and checkout in cart drawer
 - finish all products design ✔
 - add content to per page ✔
 - format the Product component for each product generated dynamically ✔
-- make adding to cart functional
+- make adding to cart functional ✔
 - check the scrolling up down when moving to another page
-- make the data fixed. store in local data
+- make the data fixed. store in local data ✔
 - add image lazy loading
-- add CartCard +/- quantity
-- add modals to confirm delete of added cart item
+- add CartCard +/- quantity ✔
+- add modals to confirm delete of added cart item ✔
+- preorder items shouls have a preorder tag on CartCard
+- disable adding to cart for no stock items
+- make a big screen mode for Product Component

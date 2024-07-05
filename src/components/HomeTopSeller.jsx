@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -11,7 +11,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 // Import Responsive
 import { useMediaQuery } from "react-responsive";
 // Import data
-import { topSellers } from "../assets/SampleData";
+// import { topSellers } from "../assets/SampleData";
 import TopSellerCard from "./TopSellerCard";
 
 const backToTop = () => {
@@ -20,6 +20,9 @@ const backToTop = () => {
 
 const HomeTopSeller = () => {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 720px)" });
+  const context = useOutletContext();
+  const topSellers = context.allProducts.slice(42, 47);
+  console.log(context);
   return (
     <div className="w-full bg-white">
       <div className=" md:max-w-[1270px] md:mx-auto">

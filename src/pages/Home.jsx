@@ -1,3 +1,4 @@
+import { useOutletContext } from "react-router-dom";
 import HomeCarousel from "../components/HomeCarousel";
 import HomeCategories from "../components/HomeCategories";
 import HomeContent from "../components/HomeContent";

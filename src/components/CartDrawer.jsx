@@ -28,20 +28,26 @@ const CartDrawer = ({ onClose, sticky, inCart, setInCart }) => {
           <CloseIcon />
         </DrawerHeader>
 
-        <DrawerBody className="p-4 text-lg">
-          <h3 className="font-semibold pb-5">
-            It looks like your cart is empty
-          </h3>
-          {inCart.map((item) => {
-            return (
-              <CartCard
-                key={item.id}
-                item={item}
-                inCart={inCart}
-                setInCart={setInCart}
-              ></CartCard>
-            );
-          })}
+        <DrawerBody className="p-4 text-lg overflow-auto">
+          {inCart.length <= 0 ? (
+            <h3 className="font-semibold pb-5">
+              It looks like your cart is empty
+            </h3>
+          ) : (
+            <>
+              {inCart.map((item) => {
+                return (
+                  <CartCard
+                    key={item.id}
+                    item={item}
+                    inCart={inCart}
+                    setInCart={setInCart}
+                  ></CartCard>
+                );
+              })}
+            </>
+          )}
+
           <div className="flex flex-col font-medium pl-4 [&>*]:border-b [&>*]:py-4"></div>
         </DrawerBody>
       </DrawerContent>
