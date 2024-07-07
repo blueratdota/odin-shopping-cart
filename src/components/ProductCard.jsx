@@ -25,39 +25,49 @@ const ProductCard = ({ data, routerLink }) => {
   const context = useOutletContext();
   // console.log(context);
   return (
-    <div className=" relative mx-5 pb-6 border shadow-sm overflow-hidden [&>*]:font-medium flex flex-col justify-between">
-      <Link to={`/${routerLink}/${data.id}`} onClick={backToTop}>
-        <div
-          className={`${classColors[productClass]} w-fit py-2 px-4 text-white absolute `}
+    <div className=" relative mx-5 pb-6 border shadow-sm overflow-hidden [&>*]:font-medium 0 flex flex-col justify-between">
+      <div className="h-full">
+        <Link
+          to={`/${routerLink}/${data.id}`}
+          onClick={backToTop}
+          className="h-full flex flex-col justify-between "
         >
-          {productClass}
-        </div>
-        <div
-          className={`bg-teal-600 w-fit py-2 px-4 top-12 text-white absolute ${data.category == "Wheel Bases" ? "" : "hidden"}`}
-        >
-          Bundle
-        </div>
-        <img
-          src={data.thumbnail}
-          alt=""
-          className="w-[75%] max-h-[75%] object-cover object-bottom mx-auto pt-10 pb-5"
-        />
-
-        <div className="text-center flex flex-col gap-2">
-          <p className="text-xl font-semibold">{productName}</p>
-          <p className="text-emerald-500 text-lg  ">¥ {productPrice}</p>
-          <div className="flex justify-center items-center content-center gap-3">
+          <div className="h-full">
             <div
-              className={`${availablityColor[data.availability].circle} size-4 rounded-[50%] opacity-50`}
-            ></div>
-            <div
-              className={`${availablityColor[data.availability].text} text-lg`}
+              className={`${classColors[productClass]} w-fit py-2 px-4 text-white absolute `}
             >
-              {data.availability}
+              {productClass}
+            </div>
+            <div
+              className={`bg-teal-600 w-fit py-2 px-4 top-12 text-white absolute ${data.category == "Wheel Bases" ? "" : "hidden"}`}
+            >
+              Bundle
+            </div>
+            <div className="h-full flex flex-col">
+              <img
+                src={data.thumbnail}
+                alt=""
+                className="w-[75%] object-cover object-bottom mx-auto my-auto pt-10 pb-5"
+              />
             </div>
           </div>
-        </div>
-      </Link>
+
+          <div className="text-center flex flex-col gap-2">
+            <p className="text-xl font-semibold">{productName}</p>
+            <p className="text-emerald-500 text-lg  ">¥ {productPrice}</p>
+            <div className="flex justify-center items-center content-center gap-3">
+              <div
+                className={`${availablityColor[data.availability].circle} size-4 rounded-[50%] opacity-50`}
+              ></div>
+              <div
+                className={`${availablityColor[data.availability].text} text-lg`}
+              >
+                {data.availability}
+              </div>
+            </div>
+          </div>
+        </Link>
+      </div>
 
       <div className="flex justify-center pt-5">
         <Button

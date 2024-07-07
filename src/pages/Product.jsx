@@ -170,7 +170,7 @@ function Product() {
           <ul className="pt-5 ">
             {product.features.map((entry, i) => {
               return (
-                <li key={i} className="flex">
+                <li key={i} className="flex text-left">
                   <div>*</div>
                   <p>{entry}</p>
                 </li>

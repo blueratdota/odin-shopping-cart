@@ -26,7 +26,11 @@ function App() {
   // console.log(allProducts);
   return (
     <div className="bg-gray-800">
-      <ScrollNav inCart={inCart} setInCart={setInCart}></ScrollNav>
+      <ScrollNav
+        inCart={inCart}
+        setInCart={setInCart}
+        allProducts={allProducts}
+      ></ScrollNav>
       <Outlet
         context={{
           allProducts: allProducts,

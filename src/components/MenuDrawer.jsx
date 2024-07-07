@@ -11,9 +11,19 @@ import {
 import { Link } from "react-router-dom";
 import { CloseIcon } from "@chakra-ui/icons";
 
-const MenuDrawer = ({ onClose, sticky, setIsDrawerOpen }) => {
-  const backToTop = () => {
+const MenuDrawer = ({
+  onClose,
+  sticky,
+  setIsDrawerOpen,
+  setShowSearch,
+  setQuery
+}) => {
+  const menuClick = () => {
+    onClose();
     window.scrollTo(0, 0);
+    setIsDrawerOpen(false);
+    setShowSearch(false);
+    setQuery("");
   };
   return (
     <>
@@ -39,75 +49,25 @@ const MenuDrawer = ({ onClose, sticky, setIsDrawerOpen }) => {
         <DrawerBody className="p-4 text-lg">
           <h3 className="font-semibold pb-5">Categories</h3>
           <div className="flex flex-col font-medium pl-4 [&>*]:border-b [&>*]:py-4">
-            <Link
-              to={"all-products"}
-              onClick={() => {
-                onClose();
-                backToTop();
-                setIsDrawerOpen(false);
-              }}
-            >
+            <Link to={"all-products"} onClick={menuClick}>
               ALL PRODUCTS
             </Link>
-            <Link
-              to={"wheel-bases"}
-              onClick={() => {
-                onClose();
-                backToTop();
-                setIsDrawerOpen(false);
-              }}
-            >
+            <Link to={"wheel-bases"} onClick={menuClick}>
               RACING WHEELS/ DIRECT DRIVE BASES
             </Link>
-            <Link
-              to={"steering-wheels"}
-              onClick={() => {
-                onClose();
-                backToTop();
-                setIsDrawerOpen(false);
-              }}
-            >
+            <Link to={"steering-wheels"} onClick={menuClick}>
               STEERING WHEELS
             </Link>
-            <Link
-              to={"pedals"}
-              onClick={() => {
-                onClose();
-                backToTop();
-                setIsDrawerOpen(false);
-              }}
-            >
+            <Link to={"pedals"} onClick={menuClick}>
               PEDALS
             </Link>
-            <Link
-              to={"shifters/others"}
-              onClick={() => {
-                onClose();
-                backToTop();
-                setIsDrawerOpen(false);
-              }}
-            >
+            <Link to={"shifters/others"} onClick={menuClick}>
               SHIFTER/OTHERS{" "}
             </Link>
-            <Link
-              to={"accessories"}
-              onClick={() => {
-                onClose();
-                backToTop();
-                setIsDrawerOpen(false);
-              }}
-            >
+            <Link to={"accessories"} onClick={menuClick}>
               ACCESSORIES{" "}
             </Link>
-            <Link
-              to={"/"}
-              className="font-semibold"
-              onClick={() => {
-                onClose();
-                backToTop();
-                setIsDrawerOpen(false);
-              }}
-            >
+            <Link to={"/"} className="font-semibold" onClick={menuClick}>
               GO BACK TO HOME{" "}
             </Link>
           </div>

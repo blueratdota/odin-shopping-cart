@@ -22,7 +22,7 @@ const HomeTopSeller = () => {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 720px)" });
   const context = useOutletContext();
   const topSellers = context.allProducts.slice(42, 47);
-  console.log(context);
+  // console.log(context);
   return (
     <div className="w-full bg-white">
       <div className=" md:max-w-[1270px] md:mx-auto">
