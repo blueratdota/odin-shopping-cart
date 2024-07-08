@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import PaginatedContent from "./PaginatedContent";
 
 const PopoverContent = ({ filteredItems, setQuery, setShowSearch, query }) => {
+  const navigate = useNavigate();
   if (query) {
     return (
-      <div className={`bg-gray-200 md:w-[600px] px-1 py-1 `}>
+      <div className={`bg-gray-200 md:w-[600px] px-1 `}>
         {filteredItems.slice(0, 5).map((item) => {
           return (
             <Link
@@ -12,6 +14,8 @@ const PopoverContent = ({ filteredItems, setQuery, setShowSearch, query }) => {
               className="py-2 px-2 bg-white border h-[100px] flex"
               onClick={() => {
                 setShowSearch(false);
+                setQuery("");
+                window.scrollTo(0, 0);
               }}
             >
               <div className="h-full">
@@ -28,7 +32,19 @@ const PopoverContent = ({ filteredItems, setQuery, setShowSearch, query }) => {
             </Link>
           );
         })}
-        {filteredItems.length > 5 ? <div>see more</div> : null}
+        {filteredItems.length > 5 ? (
+          <Link
+            to={`/search-results/${query}`}
+            state={filteredItems}
+            onClick={() => {
+              window.scrollTo(0, 0);
+              setShowSearch(false);
+              setQuery("");
+            }}
+          >
+            <div className="bg-blue-400 py-2"> see more </div>
+          </Link>
+        ) : null}
       </div>
     );
   }

@@ -12,6 +12,7 @@ import WheelBases from "./pages/WheelBases.jsx";
 import AllProducts from "./pages/AllProducts.jsx";
 import Accessories from "./pages/Accessories.jsx";
 import Shifters from "./pages/Shifters.jsx";
+import SearchResults from "./pages/SearchResults.jsx";
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,8 @@ const router = createBrowserRouter([
       { path: "shifters/others", element: <Shifters /> },
       { path: "shifters/others/:id", element: <Product /> },
       { path: "accessories", element: <Accessories /> },
-      { path: "accessories/:id", element: <Product /> }
+      { path: "accessories/:id", element: <Product /> },
+      { path: "search-results/:id", element: <SearchResults /> }
     ]
   }
 ]);

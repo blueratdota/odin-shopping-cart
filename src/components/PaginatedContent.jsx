@@ -5,27 +5,60 @@ import ProductCard from "./ProductCard";
 import { MenuItem, Select, Pagination, Button } from "@mui/material";
 // Import Chakra
 import { TriangleDownIcon } from "@chakra-ui/icons";
+import { useSearchParams } from "react-router-dom";
 const PaginatedContent = ({ data, filter, routerLink }) => {
   const localData = data;
-  const [currPage, setCurrPage] = useState(1);
-  const [cardPerPage, setCardPerPage] = useState(6);
-  const [sortAsc, setSortAsc] = useState(true);
-  const [sortType, setSortType] = useState("name");
+  const [searchParams, setSearchParams] = useSearchParams({
+    currPage: 1,
+    cardPerPage: 6,
+    sortAsc: true,
+    sortType: "name"
+  });
+  const currPage = searchParams.get("currPage");
+  const cardPerPage = searchParams.get("cardPerPage");
+  const sortAsc = searchParams.get("sortAsc") === "true";
+  const sortType = searchParams.get("sortType");
 
   const handlePageChange = (e, page) => {
-    setCurrPage(page);
+    setSearchParams(
+      (prev) => {
+        prev.set("currPage", page);
+        return prev;
+      },
+      { replace: true }
+    );
+    window.scrollTo(0, 0);
   };
 
   const handlesetCardPerPage = (e) => {
-    setCardPerPage(e.target.value);
+    setSearchParams(
+      (prev) => {
+        prev.set("cardPerPage", e.target.value);
+        return prev;
+      },
+      { replace: true }
+    );
   };
 
   const handleSort = () => {
-    setSortAsc(!sortAsc);
+    // console.log(sortAsc);
+    setSearchParams(
+      (prev) => {
+        prev.set("sortAsc", !sortAsc);
+        return prev;
+      },
+      { replace: true }
+    );
   };
 
   const handleSetSortType = (e) => {
-    setSortType(e.target.value);
+    setSearchParams(
+      (prev) => {
+        prev.set("sortType", e.target.value);
+        return prev;
+      },
+      { replace: true }
+    );
   };
 
   // get current posts and sorting
@@ -107,6 +140,7 @@ const PaginatedContent = ({ data, filter, routerLink }) => {
         count={Math.ceil(filteredData.length / cardPerPage)}
         className="flex justify-center pt-6 "
         onChange={handlePageChange}
+        page={Number(currPage)}
       ></Pagination>
     </div>
   );

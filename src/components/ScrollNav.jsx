@@ -1,19 +1,6 @@
 import { useState, useRef, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
-import {
-  Drawer,
-  useDisclosure,
-  // Popover,
-  // PopoverTrigger,
-  // PopoverContent,
-  // PopoverHeader,
-  // PopoverBody,
-  // PopoverFooter,
-  // PopoverArrow,
-  // PopoverCloseButton,
-  // PopoverAnchor,
-  Button
-} from "@chakra-ui/react";
+import { Drawer, useDisclosure } from "@chakra-ui/react";
 //image imports
 import fanatecFullLogo from "../assets/images/svg/fanatec-logo_white.svg";
 import fanatecShortLogo from "../assets/images/svg/fanatec-f_white.svg";
@@ -382,7 +369,12 @@ const ScrollNav = ({ inCart, setInCart, allProducts }) => {
               </div>
               <div className="border-l border-gray-300 border-opacity-20 flex max-w-[350px] ">
                 <Popover
-                  isOpen={query}
+                  isOpen={() => {
+                    if (query) {
+                      setShowSearch(true);
+                    }
+                    return showSearch;
+                  }}
                   positions={["bottom"]} // preferred positions by priority
                   content={
                     <PopoverContent
