@@ -101,12 +101,13 @@ function Product() {
                     const cartItemsID = context.inCart.map((entry) => {
                       return entry.id;
                     });
+                    console.log(cartItemsID);
                     if (cartItemsID.includes(product.id)) {
                       context.setInCart(
                         context.inCart.map((item) => {
                           if (product.id == item.id) {
                             return { ...product, quantity: item.quantity + 1 };
-                          } else return product;
+                          } else return item;
                         })
                       );
                     } else
@@ -130,11 +131,11 @@ function Product() {
                     const cartItemsID = context.inCart.map((entry) => {
                       return entry.id;
                     });
-                    if (cartItemsID.includes(data.id)) {
+                    if (cartItemsID.includes(product.id)) {
                       context.setInCart(
                         context.inCart.map((item) => {
-                          if (item.id == data.id) {
-                            return { ...data, quantity: item.quantity + 1 };
+                          if (item.id == product.id) {
+                            return { ...product, quantity: item.quantity + 1 };
                           } else return item;
                         })
                       );
