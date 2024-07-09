@@ -20,14 +20,13 @@ Live preview - https://papaya-fairy-763063.netlify.app
 - make a big screen mode for Product Component ✔
 - make search bar functional - when clicked - reveals search bar div. for mobile scrolled down, forces the viewport to go to top ✔
 - add search result page ✔
+- add design to menu bar search ✔
+- preorder items shouls have a preorder tag on CartCard ✔
 
 # To be added/fixed:
 
 - make favorites functional
-- add design to menu bar search
 - check the scrolling up down when moving to another page
 - add image lazy loading
-- preorder items shouls have a preorder tag on CartCard
 - add a checkout page?
-- adding to favorite doesnt work
 - add when cartcard is clicked, redirect to proudct page

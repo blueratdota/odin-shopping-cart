@@ -1,6 +1,6 @@
 import { Button } from "@chakra-ui/react";
 import Icon from "@mdi/react";
-import { mdiCartOutline } from "@mdi/js";
+import { mdiCartOutline, mdiClose } from "@mdi/js";
 import numeral from "numeral";
 import { Link, useOutletContext } from "react-router-dom";
 const ProductCard = ({ data, routerLink }) => {
@@ -71,7 +71,7 @@ const ProductCard = ({ data, routerLink }) => {
 
       <div className="flex justify-center pt-5">
         <Button
-          className=" w-[90%] py-2 flex items-center gap-2 bg-gray-700 text-white"
+          className={`w-[90%] py-2 flex items-center gap-2 ${data.availability == "No Stock" ? "bg-gray-400" : "bg-gray-700"} text-white`}
           onClick={() => {
             // turn this into a function
             // creates a local var with all the unique ids in the inCart
@@ -97,8 +97,17 @@ const ProductCard = ({ data, routerLink }) => {
             } else return false;
           })()}
         >
-          <Icon path={mdiCartOutline} className="h-5 block"></Icon>{" "}
-          <p className="text-lg"> Add to cart</p>
+          {data.availability == "No Stock" ? (
+            <>
+              <Icon path={mdiClose} className="h-5 block"></Icon>{" "}
+              <p className="text-lg"> Out of stock</p>
+            </>
+          ) : (
+            <>
+              <Icon path={mdiCartOutline} className="h-5 block"></Icon>{" "}
+              <p className="text-lg"> Add to cart</p>
+            </>
+          )}
         </Button>
       </div>
     </div>

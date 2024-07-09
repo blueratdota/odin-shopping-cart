@@ -52,17 +52,22 @@ const CartCard = ({ item, inCart, setInCart }) => {
 
   return (
     <div className="h-[150px] bg-white mb-4 shadow-sm flex px-4 py-2 gap-4 relative">
-      <div className="basis-2/5">
+      <div className="w-[130px]">
         <img
           src={item.thumbnail}
           alt={item.name}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain"
         />
       </div>
-      <div className="basis-3/5 relative">
+      <div className="w-full relative">
         <CloseIcon onClick={onOpen} className="absolute right-0" />
 
-        <p className="mt-5 text-lg font-semibold">{item.name}</p>
+        <p className="mt-5 text-lg font-semibold truncate">{item.name}</p>
+        {item.availability == "Pre-Order" ? (
+          <p className=" text-sm font-thin text-orange-500">
+            {item.availability}
+          </p>
+        ) : null}
         <p className="text-lg text-emerald-500 font-medium absolute bottom-2">
           ¥ {numeral(item.price).format("0,0")}
         </p>
