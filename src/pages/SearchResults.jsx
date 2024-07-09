@@ -20,9 +20,11 @@ const SearchResults = ({}) => {
   }, [query]);
 
   return (
-    <div>
+    <div className="bg-white py-10">
+      <h2 className="text-center text-3xl font-semibold">
+        {`Showing search results for "${query}"`}{" "}
+      </h2>
       <PaginatedContent data={filteredItems}></PaginatedContent>
-      xxx
     </div>
   );
 };
